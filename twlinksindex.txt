@@ -101,6 +101,7 @@ rc://*/tw/dict/bible/kt/hope
 rc://*/tw/dict/bible/kt/houseofgod
 rc://*/tw/dict/bible/kt/humble
 rc://*/tw/dict/bible/kt/hypocrite
+rc://*/tw/dict/bible/kt/iamyahweh
 rc://*/tw/dict/bible/kt/imageofgod
 rc://*/tw/dict/bible/kt/inchrist
 rc://*/tw/dict/bible/kt/inherit
