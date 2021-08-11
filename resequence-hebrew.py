@@ -1,8 +1,8 @@
 import io
 
 # CHANGE THIS to the path to your file, it might be in your downloads directory
-filename = "C:/Users/benja/Downloads/05-DEU-master.usfm"
-outputfile = "C:/Users/benja/Downloads/05-DEU.usfm"
+filename = "C:/Users/benja/Downloads/25-LAM-master.usfm"
+outputfile = "C:/Users/benja/Downloads/25-LAM.usfm"
 print("starting")
 with io.open(filename, encoding='utf8') as f:
     with io.open(outputfile, 'w', encoding='utf8', newline='\n') as newFile:
