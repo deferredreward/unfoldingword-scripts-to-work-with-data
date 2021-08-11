@@ -1,9 +1,9 @@
 import io, json
 
-ignoreList = ["the", "a", "an", "and", "or", "but", "of", "to", "at", "from", "in", "his", "my", "according", "for", "by", "your"]
+ignoreList = ["the", "a", "an", "and", "or", "but", "of", "to", "at", "from", "in", "his", "my", "according", "for", "by", "your", "toward", "is", "who", "that", "which", "he", "they", "them", "so", "him", "her", "this", "that", "she", "you"]
 
 tCoreProjectsDir = "C:/Users/benja/translationCore/projects/"
-projects = ["jon" , "exo", "est",  "neh", "oba", "rut"]  # finished (or mostly) BPs
+projects = ["exo", "est",  "neh", "jon" , "oba", "rut"]  # finished (or mostly) BPs
 
 ultPrefix = "en_ult_"
 ustPrefix = 'en_ust_'
@@ -12,6 +12,7 @@ bookPostfix = '_book'
 pathToAlignment = "/.apps/translationCore/alignmentData/"
 
 strongs = input("Enter strong #: ").upper()
+print()
 
 def findTranslations(prefix):
     possibleTranslations = {}
@@ -56,10 +57,17 @@ def findTranslations(prefix):
         except: continue
     if prefix == ultPrefix: print("ULT:")
     else: print("UST:")
-    for item in possibleTranslations.keys():
-        print("-------------------------------------")
-        print(item + " : " + str(len(possibleTranslations[item])) + 'x in: ' + str(possibleTranslations[item]))
-    print("-------------------------------------")
+    sorted_items = sorted(possibleTranslations.items(),  key = lambda item : len(item[1]))
+    sortedPossibleTranslations = dict(sorted_items)
+    for item in sortedPossibleTranslations.keys():
+        print("\n\n")
+        
+        print(item.upper() + " : " + str(len(sortedPossibleTranslations[item])) + 'x in: ' , end='')
+        for values in sortedPossibleTranslations[item]:
+            print(values.upper(), end=', ')
+    if prefix == ultPrefix: print("\n\n^^ULT^^")
+    else: print("\n\n^^UST^^")    
+    print("\n-------------------------------------\n+++++++++++++++++++++\n-----------------------------\n")
 
 findTranslations(ustPrefix)
 findTranslations(ultPrefix)
