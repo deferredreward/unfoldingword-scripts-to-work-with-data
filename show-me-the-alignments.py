@@ -61,8 +61,8 @@ def findTranslations(prefix):
         print(item + " : " + str(len(possibleTranslations[item])) + 'x in: ' + str(possibleTranslations[item]))
     print("-------------------------------------")
 
-findTranslations(ultPrefix)
 findTranslations(ustPrefix)
+findTranslations(ultPrefix)
 
 """
 figuring out json structure
