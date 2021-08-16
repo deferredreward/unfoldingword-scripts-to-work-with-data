@@ -1,9 +1,9 @@
 import io, json
 
 ignoreList = ["the", "a", "an", "and", "or", "but", "of", "to", "at", "from", "in", "his", "my", "according", "for", "by", "your", "toward", "is", "who", "that", "which", "he", "they", "them", "so", "him", "her", "this", "that", "she", "you"]
-
+# %USER%
 tCoreProjectsDir = "C:/Users/benja/translationCore/projects/"
-projects = ["exo", "est",  "neh", "jon" , "oba", "rut"]  # finished (or mostly) BPs
+projects = ["exo", "est",  "neh", "jon" , "oba", "rut", "ezr"]  # finished (or mostly) BPs
 
 ultPrefix = "en_ult_"
 ustPrefix = 'en_ust_'
