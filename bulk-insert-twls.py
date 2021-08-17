@@ -9,6 +9,12 @@ pathTWL= "C://Users//benja//Documents//uwgit//en_twl//"
 
 wordStrongsGrabber = r"\\w (.*?)\|.*?strong=\"(?:\w?:?){0,2}(H\d{4})"
 twbaselink = "rc://*/tw/dict/bible"
+references = []
+uniqueIDs = []
+tags = []
+origWords = []
+occurrences = []
+TWLinks = []
 
 def makeLink(twarticle):
     # twarticle = input("Enter twarticle: ").lower().strip()
@@ -23,7 +29,7 @@ def makeLink(twarticle):
         return twbaselink + "/names/" + twarticle, "name"
     elif twbaselink + "/other/" + twarticle in twlinkslist:
         # print(twbaselink + "/other/" + twarticle)
-        return twbaselink + "/other/" + twarticle , "other"
+        return twbaselink + "/other/" + twarticle , ""
     else:
         raise Exception("article not found")
 
@@ -37,16 +43,21 @@ def makeNewID(idList):
         isNotUniqueID = idList.count(newID)
     return newID
 
+def removeLinkAt(location):
+    references.pop(location)
+    uniqueIDs.pop(location)
+    tags.pop(location)
+    origWords.pop(location)
+    occurrences.pop(location)
+    TWLinks.pop(location)
+
 def themainthing():
     strongs = input("Enter strong #: ").upper()
     linkToInsert, tagToInsert = makeLink(input("Enter twarticle: ").lower().strip())
     print("link will be: " + linkToInsert)
-    references = []
-    uniqueIDs = []
-    tags = []
-    origWords = []
-    occurrences = []
-    TWLinks = []
+    totalInsertions = 0
+
+
     
     # TWLfile = [references, uniqueIDs, tags, origWords, occurrences, TWLinks]
     for filename in glob.glob(os.path.join(pathUSFM, '*.usfm')):
@@ -59,7 +70,7 @@ def themainthing():
         TWLinks = []
         currentBook = filename.split('-')[1].rstrip('.usfm') # from filename      
         # temp exclusions for other's work:
-        exclusions = ["1KI",]
+        exclusions = ["1KI"]
         if currentBook in exclusions: 
             print("excluding " + currentBook)
             continue
@@ -74,7 +85,7 @@ def themainthing():
             print("Not found in " + currentBook)
             continue
         else:       
-            print("found in " + currentBook)               
+            # print("found in " + currentBook)               
             insertionCount = 0  
             # it's easier to work with lists than a file
 
@@ -124,7 +135,7 @@ def themainthing():
                                             while insertionIndex == 0:
                                                 # print(tempVerse)
                                                 if references.count(str(currentChapter) + ":" + str(tempVerse)) > 0: 
-                                                    print("not true" + currentBook +  str(currentChapter) + ":" + str(tempVerse))
+                                                    # print("not true" + currentBook +  str(currentChapter) + ":" + str(tempVerse))
                                                     insertionIndex = references.index(str(currentChapter) + ":" + str(tempVerse)) + 1
                                                 else:  # back up until we find an index
                                                     tempVerse -= 1
@@ -135,21 +146,40 @@ def themainthing():
                                     while references[testindex] == str(currentChapter)+ ":" + str(currentVerse):
                                         # if references[testindex] == str(currentChapter)+ ":" + str(currentVerse):
                                             # print(origWords[testindex])
-                                        if origWords[testindex] == item[0]:
-                                            makeTWL = False
-                                            if TWLinks[testindex].strip() != linkToInsert.strip():
-                                                if TWLinks[testindex].strip().split("/")[-1] == linkToInsert.strip().split("/")[-1] and TWLinks[testindex].strip().split("/")[-2] != linkToInsert.strip().split("/")[-2] :
-                                                    print("improper link @ " + currentBook +  " " + str(currentChapter) + ":" + str(currentVerse) + ", found: " +TWLinks[testindex].strip().split("/")[-2] + "/" + TWLinks[testindex].strip().split("/")[-1] + " FIXING" )
-                                                    makeTWL = True
-                                                else:
-                                                     print("link mismatch @ " + currentBook + " " + str(currentChapter) + ":" + str(currentVerse) + ", not overridden, found: " +TWLinks[testindex].strip().split("/")[-2] + "/" + TWLinks[testindex].strip().split("/")[-1] )
-                                            break
-                                        else: 
+                                        # print(currentBook + " " + str(currentChapter) + ":" + str(currentVerse)+ ": " + origWords[testindex] + "=?" + item[0])
+                                        if origWords[testindex].strip() == item[0].strip(): # the text matches a TWL row content (strip is important!)
+                                            makeTWL = False                         # so don't make a duplicate link                                                
+                                                # this makes sure its not a case where I just wrote the article name
+                                            if len(TWLinks[testindex].split("/")) == 1:                                            
+                                                references.pop(testindex)
+                                                uniqueIDs.pop(testindex)
+                                                tags.pop(testindex)
+                                                origWords.pop(testindex)
+                                                occurrences.pop(testindex)
+                                                TWLinks.pop(testindex)
+                                                makeTWL = True
+
+                                            # this next is the check for bad links (they point to invalid locations) (comparing kt/ephod with name/ephod or some such)
+                                            elif TWLinks[testindex].split("/")[-1].strip() == linkToInsert.split("/")[-1].strip() and TWLinks[testindex].split("/")[-2].strip() != linkToInsert.split("/")[-2].strip() :
+                                                print("improper link @ " + currentBook +  " " + str(currentChapter) + ":" + str(currentVerse) + ", found: " +TWLinks[testindex].split("/")[-2].strip() + "/" + TWLinks[testindex].split("/")[-1].strip() + " FIXING" )
+                                                # removeLinkAt(testindex)
+                                                references.pop(testindex)
+                                                uniqueIDs.pop(testindex)
+                                                tags.pop(testindex)
+                                                origWords.pop(testindex)
+                                                occurrences.pop(testindex)
+                                                TWLinks.pop(testindex)
+                                                makeTWL = True
+                                            elif TWLinks[testindex].strip() != linkToInsert.strip(): # this just means you linked to something else, that's ok, but this script should mainly be used to update things you're pretty sure are always going to point to the same TW ariticle (so it goes to kt/sacrifice instead of kt/offering, that's a red flag that you shouldn't have scripted it)
+                                                    print("link mismatch @ " + currentBook + " " + str(currentChapter) + ":" + str(currentVerse) + ", not overridden, found: " +TWLinks[testindex].strip().split("/")[-2] + "/" + TWLinks[testindex].strip().split("/")[-1] )
+                                            break # we've decided to insert so let's not go back and say no
+                                        else:  # otherwise keep working through exisiting TWLs
                                             testindex += 1
+                                            if testindex > len(references) - 1: break
                                             continue
                                     
                                     if makeTWL:
-                                        # print("inserted")
+                                        # print("inserted@ " + currentBook + " " + str(currentChapter) + ":" + str(currentVerse))
                                         insertionCount += 1
                                         references.insert(insertionIndex, str(currentChapter)+ ":" + str(currentVerse))
                                         uniqueIDs.insert(insertionIndex, makeNewID(uniqueIDs))
@@ -159,6 +189,7 @@ def themainthing():
                                         TWLinks.insert(insertionIndex, linkToInsert.strip())
 
             if insertionCount > 0:
+                totalInsertions += insertionCount
                 os.rename(currentTWLfile, currentTWLfile.replace('.tsv','.old'))
                 print("made " + str(insertionCount) + " insertions in " + currentBook)
                 with open(currentTWLfile, 'w', encoding='utf8', newline='\n') as f:
@@ -169,6 +200,7 @@ def themainthing():
                         i += 1
             else: 
               #  os.rename(currentTWLfile, currentTWLfile.replace('.tsv','.old'))
-                print("no updates needed")
+                print("no updates needed in " + currentBook)
+    print("total updates: " + str(totalInsertions))
 
 themainthing()

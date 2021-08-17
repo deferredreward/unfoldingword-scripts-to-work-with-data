@@ -1,0 +1,18 @@
+twls I did in bulk:
+strongs : twl article  #times found in OT = # total updates once I had the program count (some places may have been excluded like 1KI where Aaron V is working)
+H4196 : altar 32x - there's 8 places this will need to be changed to incense alter, but that's worth it
+H3407 : curtain 54x
+H4908 : tabernacle 139x
+H0646 : ephod 49x
+H2833 : breastplate 25x
+H4501 : lampstand (only in EXO) 20x
+H0727 : arkofthecovenant 201x 
+H4720 : sanctuary 74x
+H3742 : cherubim 91x
+H3727 : atonementlid 27x
+H4598 : robe 28x = 18x
+H3801 : tunic 29x = 20x
+H3547 : priest 23x = 23x
+H0175 : aaron ? = 58x
+H7676 : sabbath 111x = 16x
+H4872 : Moses ? = 61x
