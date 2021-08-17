@@ -1,17 +1,17 @@
 
 import io, glob, os, csv, re, random
 
-testUSFM = "C://Users//benja//Documents//uwgit//hbo_uhb//02-EXO.usfm"
+# testUSFM = "C://Users//benja//Documents//uwgit//hbo_uhb//02-EXO.usfm"
 pathUSFM = "C://Users//benja//Documents//uwgit//hbo_uhb//"
 
-testTWL= "C://Users//benja//Documents//uwgit//en_twl//twl_EXO.tsv"
+# testTWL= "C://Users//benja//Documents//uwgit//en_twl//twl_EXO.tsv"
 pathTWL= "C://Users//benja//Documents//uwgit//en_twl//"
 
 wordStrongsGrabber = r"\\w (.*?)\|.*?strong=\"(?:\w?:?){0,2}(H\d{4})"
 twbaselink = "rc://*/tw/dict/bible"
 
-def makeLink():
-    twarticle = input("Enter twarticle: ").lower().strip()
+def makeLink(twarticle):
+    # twarticle = input("Enter twarticle: ").lower().strip()
     with io.open("twlinksindex.txt", encoding='utf8') as f:
         twlinkslist = f.readlines()
     if '\n' not in twarticle: twarticle += '\n'
@@ -39,7 +39,7 @@ def makeNewID(idList):
 
 def themainthing():
     strongs = input("Enter strong #: ").upper()
-    linkToInsert, tagToInsert = makeLink()
+    linkToInsert, tagToInsert = makeLink(input("Enter twarticle: ").lower().strip())
     print("link will be: " + linkToInsert)
     references = []
     uniqueIDs = []
@@ -138,7 +138,11 @@ def themainthing():
                                         if origWords[testindex] == item[0]:
                                             makeTWL = False
                                             if TWLinks[testindex].strip() != linkToInsert.strip():
-                                                print("link mismatch @ " + currentBook + str(currentChapter) + ":" + str(currentVerse) + ", not overridden, found: " +TWLinks[testindex].strip().split("/")[-2] + "/" + TWLinks[testindex].strip().split("/")[-1] )
+                                                if TWLinks[testindex].strip().split("/")[-1] == linkToInsert.strip().split("/")[-1] and TWLinks[testindex].strip().split("/")[-2] != linkToInsert.strip().split("/")[-2] :
+                                                    print("improper link @ " + currentBook +  " " + str(currentChapter) + ":" + str(currentVerse) + ", found: " +TWLinks[testindex].strip().split("/")[-2] + "/" + TWLinks[testindex].strip().split("/")[-1] + " FIXING" )
+                                                    makeTWL = True
+                                                else:
+                                                     print("link mismatch @ " + currentBook + " " + str(currentChapter) + ":" + str(currentVerse) + ", not overridden, found: " +TWLinks[testindex].strip().split("/")[-2] + "/" + TWLinks[testindex].strip().split("/")[-1] )
                                             break
                                         else: 
                                             testindex += 1
@@ -154,7 +158,7 @@ def themainthing():
                                         occurrences.insert(insertionIndex, 1)
                                         TWLinks.insert(insertionIndex, linkToInsert.strip())
 
-            if originalTWLfileLength != len(references):
+            if insertionCount > 0:
                 os.rename(currentTWLfile, currentTWLfile.replace('.tsv','.old'))
                 print("made " + str(insertionCount) + " insertions in " + currentBook)
                 with open(currentTWLfile, 'w', encoding='utf8', newline='\n') as f:
