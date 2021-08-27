@@ -16,22 +16,72 @@ origWords = []
 occurrences = []
 TWLinks = []
 
+def insertAllNames():
+    allNamesTotal = 0
+    namesDict = {}  # H1162: boaz
+    blacklist = []
+    for file in glob.glob("C:/Users/benja/Documents/uwgit/en_tw/bible/names/*.md"):
+        article = file.split("\\")[-1].replace('.md','')  
+        strongsNumbers = []
+        with io.open(file, encoding='utf8') as f:
+            contents = f.readlines()     
+        for line in contents:
+            if line.count("Strong’s:") == 1:
+                strongsNumbers.extend(line.split(':')[1].split(','))
+                strongsNumbers = [num.strip() for num in strongsNumbers]
+        i = 0
+        # for number in strongsNumbers: # standardize strongs to 4 digit
+        while i < len(strongsNumbers):
+            if len(strongsNumbers[i]) < 5:
+                # print("shorty " + number)
+                try:
+                    newNumber = strongsNumbers[i][0] + "0" * (5 - len(strongsNumbers[i])) + strongsNumbers[i][1:]
+                    strongsNumbers.pop(i)
+                    strongsNumbers.insert(i, newNumber)
+
+                    # print("made it longer: " + number)
+                except:
+                    # print(article + " with " + number)
+                    raise
+            i += 1
+        # it's too messy to deal with anything that has more than one Hebrew or Greek lemma, sorry
+        # print(strongsNumbers)
+        if len(strongsNumbers) > 2 or (len(strongsNumbers) == 2 and strongsNumbers[0][0] == strongsNumbers[1][0]):
+            blacklist.extend(strongsNumbers)  
+            # print(strongsNumbers)
+        else:
+            for number in strongsNumbers:
+                try:
+                    namesDict[number] = article
+                except:
+                    # we need to remove any other elements that might have a duplicate strongs # or we're going to get things wrong, for instance: Judas or Simon or David will all have to be determined by a human b/c there's more than one of them
+                    blacklist.append(number) 
+    print(blacklist)
+    for bad in blacklist: # drop all things that are potential duplicates
+        if bad in namesDict:
+            namesDict.pop(bad)
+
+    for name in namesDict:
+        linkToInsert, tagToInsert = makeLink(namesDict[name])
+        allNamesTotal+= themainthing(name, linkToInsert, tagToInsert)     
+    print("total updates across all files: "  + str(allNamesTotal), file=open('output.txt','a'))
+
+
+
+
 def makeLink(twarticle):
     # twarticle = input("Enter twarticle: ").lower().strip()
     with io.open("twlinksindex.txt", encoding='utf8') as f:
         twlinkslist = f.readlines()
     if '\n' not in twarticle: twarticle += '\n'
     if twbaselink + "/kt/" + twarticle  in twlinkslist:
-        # print(twbaselink + "/kt/" + twarticle)
         return twbaselink + "/kt/" + twarticle, "keyterm"
     elif twbaselink + "/names/" + twarticle in twlinkslist:
-        # print(twbaselink + "/names/" + twarticle)
         return twbaselink + "/names/" + twarticle, "name"
     elif twbaselink + "/other/" + twarticle in twlinkslist:
-        # print(twbaselink + "/other/" + twarticle)
         return twbaselink + "/other/" + twarticle , ""
     else:
-        raise Exception("article not found")
+        raise Exception("article " + twarticle + " not found")
 
 def makeNewID(idList):
     abcs = "qwertyuioplkjhgfdsazxcvbnm" # quicker to type
@@ -43,21 +93,24 @@ def makeNewID(idList):
         isNotUniqueID = idList.count(newID)
     return newID
 
-def removeLinkAt(location):
-    references.pop(location)
-    uniqueIDs.pop(location)
-    tags.pop(location)
-    origWords.pop(location)
-    occurrences.pop(location)
-    TWLinks.pop(location)
+# def removeLinkAt(location):
+#     references.pop(location)
+#     uniqueIDs.pop(location)
+#     tags.pop(location)
+#     origWords.pop(location)
+#     occurrences.pop(location)
+#     TWLinks.pop(location)
 
-def themainthing():
+def userInput():
     strongs = input("Enter strong #: ").upper()
     linkToInsert, tagToInsert = makeLink(input("Enter twarticle: ").lower().strip())
-    print("link will be: " + linkToInsert)
+    themainthing(strongs, linkToInsert, tagToInsert)
+
+
+def themainthing(strongs, linkToInsert, tagToInsert):
+
+    print("link will be: " + linkToInsert, file=open('output.txt','a'))
     totalInsertions = 0
-
-
     
     # TWLfile = [references, uniqueIDs, tags, origWords, occurrences, TWLinks]
     for filename in glob.glob(os.path.join(pathUSFM, '*.usfm')):
@@ -72,7 +125,7 @@ def themainthing():
         # temp exclusions for other's work:
         exclusions = ["1KI"]
         if currentBook in exclusions: 
-            print("excluding " + currentBook)
+            print("excluding " + currentBook, file=open('output.txt','a'))
             continue
 
         currentChapter = 1
@@ -82,10 +135,9 @@ def themainthing():
         readf = f.read()
         f.close()
         if strongs not in readf:
-            print("Not found in " + currentBook)
+            # print("Not found in " + currentBook, file=open('output.txt','a'))
             continue
         else:       
-            # print("found in " + currentBook)               
             insertionCount = 0  
             # it's easier to work with lists than a file
 
@@ -112,22 +164,17 @@ def themainthing():
                         currentVerse = int(line.split("v")[1].strip())
                     elif line.find(strongs) != -1:
                         matches = re.findall(wordStrongsGrabber, line)
-                        # print(matches)
                         if len(matches) > 0:                
                             for item in matches:
                                 if item[1] == strongs:
                                     insertionIndex = 0
                                     tempVerse = currentVerse
                                     while insertionIndex == 0:      
-                                        # print(TWLfile[0].index(str(currentChapter) + ":" + str(tempVerse-1)))                      
                                         if references.count(str(currentChapter) + ":" + str(tempVerse)) > 0:
                                             insertionIndex = references.index(str(currentChapter) + ":" + str(tempVerse))
-                                            # print("this one worked " + currentBook+  str(currentChapter) + ":" + str(tempVerse))
                                         else: 
-                                            # print("adding here " + currentBook+  str(currentChapter) + ":" + str(tempVerse))
-                                            # print("insertion index: " + str(insertionIndex))
+
                                             tempVerse += 1
-                                            #print(tempVerse)
                                         # it was in the last verse in a chapter, Ps119 has 170+ verses
                                         if tempVerse > 180:
                                             tempVerse = currentVerse - 1
@@ -161,7 +208,7 @@ def themainthing():
 
                                             # this next is the check for bad links (they point to invalid locations) (comparing kt/ephod with name/ephod or some such)
                                             elif TWLinks[testindex].split("/")[-1].strip() == linkToInsert.split("/")[-1].strip() and TWLinks[testindex].split("/")[-2].strip() != linkToInsert.split("/")[-2].strip() :
-                                                print("improper link @ " + currentBook +  " " + str(currentChapter) + ":" + str(currentVerse) + ", found: " +TWLinks[testindex].split("/")[-2].strip() + "/" + TWLinks[testindex].split("/")[-1].strip() + " FIXING" )
+                                                print("improper link @ " + currentBook +  " " + str(currentChapter) + ":" + str(currentVerse) + ", found: " +TWLinks[testindex].split("/")[-2].strip() + "/" + TWLinks[testindex].split("/")[-1].strip() + " FIXING", file=open('output.txt','a') )
                                                 # removeLinkAt(testindex)
                                                 references.pop(testindex)
                                                 uniqueIDs.pop(testindex)
@@ -171,7 +218,7 @@ def themainthing():
                                                 TWLinks.pop(testindex)
                                                 makeTWL = True
                                             elif TWLinks[testindex].strip() != linkToInsert.strip(): # this just means you linked to something else, that's ok, but this script should mainly be used to update things you're pretty sure are always going to point to the same TW ariticle (so it goes to kt/sacrifice instead of kt/offering, that's a red flag that you shouldn't have scripted it)
-                                                    print("link mismatch @ " + currentBook + " " + str(currentChapter) + ":" + str(currentVerse) + ", not overridden, found: " +TWLinks[testindex].strip().split("/")[-2] + "/" + TWLinks[testindex].strip().split("/")[-1] )
+                                                    print("link mismatch @ " + currentBook + " " + str(currentChapter) + ":" + str(currentVerse) + ", not overridden, found: " +TWLinks[testindex].strip().split("/")[-2] + "/" + TWLinks[testindex].strip().split("/")[-1] , file=open('output.txt','a'))
                                             break # we've decided to insert so let's not go back and say no
                                         else:  # otherwise keep working through exisiting TWLs
                                             testindex += 1
@@ -190,17 +237,20 @@ def themainthing():
 
             if insertionCount > 0:
                 totalInsertions += insertionCount
-                os.rename(currentTWLfile, currentTWLfile.replace('.tsv','.old'))
-                print("made " + str(insertionCount) + " insertions in " + currentBook)
+                if not os.path.exists(currentTWLfile.replace('.tsv','.old')):
+                    os.rename(currentTWLfile, currentTWLfile.replace('.tsv','.old'))
+                print("made " + str(insertionCount) + " insertions in " + currentBook, file=open('output.txt','a'))
                 with open(currentTWLfile, 'w', encoding='utf8', newline='\n') as f:
                     i = 0   
                     while i < len(references):
                         twlWriter = csv.writer(f, delimiter = '\t')
                         twlWriter.writerow([references[i],uniqueIDs[i],tags[i],origWords[i],occurrences[i],TWLinks[i]])
                         i += 1
-            else: 
+            else:  pass
               #  os.rename(currentTWLfile, currentTWLfile.replace('.tsv','.old'))
-                print("no updates needed in " + currentBook)
-    print("total updates: " + str(totalInsertions))
+                # print("no updates needed in " + currentBook)
+    print("total updates: " + str(totalInsertions), file=open('output.txt','a'))
+    return totalInsertions
 
-themainthing()
+# userInput()
+insertAllNames()
