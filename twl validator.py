@@ -1,10 +1,12 @@
 import io, os, glob, random
 pathTWL= "C://Users//benja//Documents//uwgit//en_twl//"
+idList = []
+
 
 with io.open("twlinksindex.txt", encoding='utf8') as f:
     twlinkslist = f.readlines()
 
-def makeNewID(idList):
+def makeNewID(oldID):
     abcs = "qwertyuioplkjhgfdsazxcvbnm" # quicker to type
     numbers = "1234567890"
     newID = ""
@@ -12,6 +14,8 @@ def makeNewID(idList):
     while isNotUniqueID != 0:
         newID = random.choice(abcs) + random.choice(abcs + numbers) + random.choice(abcs + numbers) + random.choice(abcs + numbers)
         isNotUniqueID = idList.count(newID)
+        idList.pop(oldID)
+        idList.append(newID)        
     return newID
 
 def validateLink(line):
@@ -40,7 +44,7 @@ def validateLink(line):
     ls[5] = ls[5].replace("\\*","*")
 
     if ls[1][0].isdigit():
-        ls[1] = makeNewID(ls[1])
+        ls[1] = makeNewID(ls[1])  # the function is written as if this is passing in a list
 
     return "\t".join(ls)
 
@@ -53,6 +57,10 @@ for filename in glob.glob(os.path.join(pathTWL, '*.tsv')):
     os.rename(filename,filename.replace('.tsv','.old'))
     filename = filename.replace('.tsv','.old')
     twbaselink = "rc://*/tw/dict/bible"
+
+with io.open(filename, encoding='utf8') as f:
+    for line in f:
+        idList.append(line.split('\t')[1])
 
 
     with io.open(filename, encoding='utf8') as f:

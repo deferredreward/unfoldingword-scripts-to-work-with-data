@@ -16,6 +16,7 @@ with io.open(filename, encoding='utf8') as f:
             ls = line.split('\t')
             # ls[5] is the TWLink field
             # ls[2] is the tag field
+            ls[5] = ls[5].replace(' ','')
             if '\n' not in ls[5]: ls[5] += '\n'
             if twbaselink + "/kt/" + ls[5] in twlinkslist:
                 ls[2] = "keyterm"
@@ -31,7 +32,9 @@ with io.open(filename, encoding='utf8') as f:
             elif "/names/" in ls[5]:
                 ls[2] = "name"
             elif "/other/" in ls[5]:
-                ls[2] = ""                          
+                ls[2] = ""       
+            else: print("not a TW article: " + ls[5])                   
             ls[5] = ls[5].replace("\\*","*")
+            ls[3] = ls[3].strip()
             newLine = "\t".join(ls)
             newFile.write(newLine)

@@ -1,0 +1,1508 @@
+link will be: rc://*/tw/dict/bible/names/aaron
+
+total updates: 0
+link will be: rc://*/tw/dict/bible/names/aaron
+
+total updates: 0
+link will be: rc://*/tw/dict/bible/names/abel
+
+made 1 insertions in GEN
+total updates: 1
+link will be: rc://*/tw/dict/bible/names/abel
+
+total updates: 0
+link will be: rc://*/tw/dict/bible/names/abiathar
+
+made 10 insertions in 2SA
+made 4 insertions in 1CH
+total updates: 14
+link will be: rc://*/tw/dict/bible/names/abiathar
+
+total updates: 0
+link will be: rc://*/tw/dict/bible/names/abijah
+
+made 1 insertions in 1SA
+made 5 insertions in 1CH
+made 15 insertions in 2CH
+made 3 insertions in NEH
+total updates: 24
+link will be: rc://*/tw/dict/bible/names/abijah
+
+total updates: 0
+link will be: rc://*/tw/dict/bible/names/abimelech
+
+made 40 insertions in JDG
+made 1 insertions in 2SA
+made 1 insertions in 1CH
+made 1 insertions in PSA
+total updates: 43
+link will be: rc://*/tw/dict/bible/names/abner
+
+made 1 insertions in 1SA
+made 46 insertions in 2SA
+made 2 insertions in 1CH
+total updates: 49
+link will be: rc://*/tw/dict/bible/names/absalom
+
+made 102 insertions in 2SA
+made 2 insertions in 1KI
+made 1 insertions in 1CH
+made 2 insertions in 2CH
+made 1 insertions in PSA
+total updates: 108
+link will be: rc://*/tw/dict/bible/names/adam
+
+made 46 insertions in GEN
+made 14 insertions in EXO
+made 15 insertions in LEV
+made 24 insertions in NUM
+made 7 insertions in DEU
+made 2 insertions in JOS
+made 5 insertions in JDG
+made 7 insertions in 1SA
+made 4 insertions in 2SA
+made 5 insertions in 1KI
+made 4 insertions in 2KI
+made 4 insertions in 1CH
+made 6 insertions in 2CH
+made 3 insertions in NEH
+made 26 insertions in JOB
+made 62 insertions in PSA
+made 45 insertions in PRO
+made 49 insertions in ECC
+made 27 insertions in ISA
+made 30 insertions in JER
+made 2 insertions in LAM
+made 132 insertions in EZK
+made 4 insertions in DAN
+made 3 insertions in HOS
+made 1 insertions in JOL
+made 1 insertions in AMO
+made 3 insertions in JON
+made 5 insertions in MIC
+made 3 insertions in HAB
+made 3 insertions in ZEP
+made 1 insertions in HAG
+made 7 insertions in ZEC
+made 1 insertions in MAL
+total updates: 551
+link will be: rc://*/tw/dict/bible/names/adam
+
+total updates: 0
+link will be: rc://*/tw/dict/bible/names/adonijah
+
+made 1 insertions in 2SA
+made 1 insertions in 1CH
+made 1 insertions in 2CH
+made 1 insertions in NEH
+total updates: 4
+link will be: rc://*/tw/dict/bible/names/ahab
+
+made 26 insertions in 2KI
+made 13 insertions in 2CH
+made 2 insertions in JER
+made 1 insertions in MIC
+total updates: 42
+link will be: rc://*/tw/dict/bible/names/ahasuerus
+
+total updates: 0
+link will be: rc://*/tw/dict/bible/names/ahaz
+
+made 19 insertions in 2KI
+made 4 insertions in 1CH
+made 9 insertions in 2CH
+made 7 insertions in ISA
+made 1 insertions in HOS
+made 1 insertions in MIC
+total updates: 41
+link will be: rc://*/tw/dict/bible/names/ahaziah
+
+made 20 insertions in 2KI
+made 1 insertions in 1CH
+made 13 insertions in 2CH
+total updates: 34
+link will be: rc://*/tw/dict/bible/names/ahijah
+
+made 1 insertions in 2KI
+made 4 insertions in 1CH
+made 2 insertions in 2CH
+made 1 insertions in NEH
+total updates: 8
+link will be: rc://*/tw/dict/bible/names/ai
+
+made 1 insertions in NEH
+made 1 insertions in ISA
+link mismatch @ JER 49:3, not overridden, found: other/waste
+total updates: 2
+link will be: rc://*/tw/dict/bible/names/amaziah
+
+made 15 insertions in 2KI
+made 3 insertions in 1CH
+made 19 insertions in 2CH
+made 3 insertions in AMO
+total updates: 40
+link will be: rc://*/tw/dict/bible/names/amnon
+
+made 26 insertions in 2SA
+made 2 insertions in 1CH
+total updates: 28
+link will be: rc://*/tw/dict/bible/names/amorite
+
+made 2 insertions in NUM
+made 1 insertions in EZK
+total updates: 3
+link will be: rc://*/tw/dict/bible/names/amos
+
+made 7 insertions in AMO
+total updates: 7
+link will be: rc://*/tw/dict/bible/names/amoz
+
+made 3 insertions in 2KI
+made 3 insertions in 2CH
+made 7 insertions in ISA
+total updates: 13
+link will be: rc://*/tw/dict/bible/names/andrew
+
+total updates: 0
+link will be: rc://*/tw/dict/bible/names/annas
+
+total updates: 0
+link will be: rc://*/tw/dict/bible/names/antioch
+
+total updates: 0
+link will be: rc://*/tw/dict/bible/names/apollos
+
+total updates: 0
+link will be: rc://*/tw/dict/bible/names/aquila
+
+total updates: 0
+link will be: rc://*/tw/dict/bible/names/ararat
+
+made 1 insertions in 2KI
+made 1 insertions in ISA
+made 1 insertions in JER
+total updates: 3
+link will be: rc://*/tw/dict/bible/names/artaxerxes
+
+total updates: 0
+link will be: rc://*/tw/dict/bible/names/asa
+
+made 2 insertions in 1CH
+made 29 insertions in 2CH
+made 1 insertions in JER
+total updates: 32
+link will be: rc://*/tw/dict/bible/names/asaph
+
+made 3 insertions in 1CH
+made 3 insertions in 2CH
+made 3 insertions in NEH
+made 12 insertions in PSA
+total updates: 21
+link will be: rc://*/tw/dict/bible/names/ashdod
+
+made 2 insertions in 2CH
+made 2 insertions in ISA
+made 1 insertions in JER
+made 2 insertions in AMO
+made 1 insertions in ZEP
+made 1 insertions in ZEC
+total updates: 9
+link will be: rc://*/tw/dict/bible/names/ashdod
+
+total updates: 0
+link will be: rc://*/tw/dict/bible/names/asher
+
+made 12 insertions in NUM
+made 3 insertions in DEU
+made 4 insertions in JDG
+made 6 insertions in 1CH
+made 1 insertions in 2CH
+made 3 insertions in EZK
+total updates: 29
+link will be: rc://*/tw/dict/bible/names/ashkelon
+
+made 2 insertions in JDG
+made 1 insertions in 2SA
+made 3 insertions in JER
+made 1 insertions in AMO
+made 2 insertions in ZEP
+made 2 insertions in ZEC
+total updates: 11
+link will be: rc://*/tw/dict/bible/names/asia
+
+total updates: 0
+link will be: rc://*/tw/dict/bible/names/athaliah
+
+made 7 insertions in 2KI
+made 1 insertions in 1CH
+made 8 insertions in 2CH
+made 1 insertions in EZR
+total updates: 17
+link will be: rc://*/tw/dict/bible/names/baal
+
+made 4 insertions in NUM
+made 2 insertions in JOS
+total updates: 6
+link will be: rc://*/tw/dict/bible/names/baal
+
+total updates: 0
+link will be: rc://*/tw/dict/bible/names/baasha
+
+made 1 insertions in 2KI
+made 4 insertions in 2CH
+made 1 insertions in JER
+total updates: 6
+link will be: rc://*/tw/dict/bible/names/balaam
+
+made 3 insertions in NUM
+made 1 insertions in 1CH
+total updates: 4
+link will be: rc://*/tw/dict/bible/names/balaam
+
+total updates: 0
+link will be: rc://*/tw/dict/bible/names/barabbas
+
+total updates: 0
+link will be: rc://*/tw/dict/bible/names/barnabas
+
+total updates: 0
+link will be: rc://*/tw/dict/bible/names/bartholomew
+
+total updates: 0
+link will be: rc://*/tw/dict/bible/names/baruch
+
+made 3 insertions in NEH
+made 23 insertions in JER
+total updates: 26
+link will be: rc://*/tw/dict/bible/names/bashan
+
+made 4 insertions in DEU
+made 1 insertions in 2KI
+made 5 insertions in 1CH
+made 4 insertions in PSA
+made 1 insertions in ISA
+made 2 insertions in JER
+made 2 insertions in EZK
+made 1 insertions in MIC
+made 1 insertions in NAM
+made 1 insertions in ZEC
+total updates: 22
+link will be: rc://*/tw/dict/bible/names/bathsheba
+
+made 4 insertions in 2SA
+made 16 insertions in 1KI
+made 2 insertions in PSA
+total updates: 22
+link will be: rc://*/tw/dict/bible/names/beelzebul
+
+total updates: 0
+link will be: rc://*/tw/dict/bible/names/beersheba
+
+made 11 insertions in GEN
+made 4 insertions in JOS
+made 2 insertions in JDG
+made 4 insertions in 1SA
+made 10 insertions in 2SA
+made 4 insertions in 1KI
+made 4 insertions in 2KI
+made 4 insertions in 1CH
+made 6 insertions in 2CH
+made 4 insertions in NEH
+made 4 insertions in AMO
+total updates: 57
+link will be: rc://*/tw/dict/bible/names/benaiah
+
+made 5 insertions in 2SA
+made 14 insertions in 1CH
+made 2 insertions in 2CH
+made 4 insertions in EZR
+made 2 insertions in EZK
+total updates: 27
+link will be: rc://*/tw/dict/bible/names/benjamin
+
+made 6 insertions in JDG
+made 1 insertions in 1SA
+made 2 insertions in 2SA
+made 1 insertions in 1CH
+made 2 insertions in 2CH
+made 1 insertions in EZR
+made 2 insertions in NEH
+made 1 insertions in HOS
+made 1 insertions in ZEC
+total updates: 17
+link will be: rc://*/tw/dict/bible/names/benjamin
+
+total updates: 0
+link will be: rc://*/tw/dict/bible/names/berea
+
+total updates: 0
+link will be: rc://*/tw/dict/bible/names/bethany
+
+total updates: 0
+link will be: rc://*/tw/dict/bible/names/bethel
+
+made 13 insertions in GEN
+made 20 insertions in JOS
+made 17 insertions in JDG
+made 8 insertions in 1SA
+made 18 insertions in 1KI
+made 19 insertions in 2KI
+made 2 insertions in 1CH
+made 2 insertions in 2CH
+made 2 insertions in EZR
+made 4 insertions in NEH
+made 2 insertions in JER
+made 4 insertions in HOS
+made 13 insertions in AMO
+made 2 insertions in ZEC
+total updates: 126
+link will be: rc://*/tw/dict/bible/names/bethshemesh
+
+made 8 insertions in JOS
+made 2 insertions in JDG
+made 14 insertions in 1SA
+made 2 insertions in 1KI
+made 4 insertions in 2KI
+made 2 insertions in 1CH
+made 6 insertions in 2CH
+made 2 insertions in JER
+total updates: 40
+link will be: rc://*/tw/dict/bible/names/bethuel
+
+made 1 insertions in 1CH
+total updates: 1
+link will be: rc://*/tw/dict/bible/names/bilhah
+
+made 9 insertions in GEN
+made 2 insertions in 1CH
+total updates: 11
+link will be: rc://*/tw/dict/bible/names/boaz
+
+made 1 insertions in 1KI
+total updates: 1
+link will be: rc://*/tw/dict/bible/names/caesar
+
+total updates: 0
+link will be: rc://*/tw/dict/bible/names/caiaphas
+
+total updates: 0
+link will be: rc://*/tw/dict/bible/names/cain
+
+made 1 insertions in GEN
+made 1 insertions in NUM
+made 1 insertions in JOS
+total updates: 3
+link will be: rc://*/tw/dict/bible/names/cain
+
+total updates: 0
+link will be: rc://*/tw/dict/bible/names/cana
+
+total updates: 0
+link will be: rc://*/tw/dict/bible/names/capernaum
+
+total updates: 0
+link will be: rc://*/tw/dict/bible/names/cherethites
+
+made 4 insertions in 2SA
+made 1 insertions in 1CH
+made 1 insertions in EZK
+made 1 insertions in ZEP
+total updates: 7
+link will be: rc://*/tw/dict/bible/names/cilicia
+
+total updates: 0
+link will be: rc://*/tw/dict/bible/names/colossae
+
+total updates: 0
+link will be: rc://*/tw/dict/bible/names/cornelius
+
+total updates: 0
+link will be: rc://*/tw/dict/bible/names/cyrus
+
+total updates: 0
+link will be: rc://*/tw/dict/bible/names/damascus
+
+total updates: 0
+link will be: rc://*/tw/dict/bible/names/delilah
+
+made 6 insertions in JDG
+total updates: 6
+link will be: rc://*/tw/dict/bible/names/eleazar
+
+made 2 insertions in EXO
+made 3 insertions in LEV
+made 35 insertions in NUM
+made 1 insertions in DEU
+made 1 insertions in JDG
+made 1 insertions in 2SA
+made 15 insertions in 1CH
+made 3 insertions in EZR
+made 1 insertions in NEH
+total updates: 62
+link will be: rc://*/tw/dict/bible/names/eleazar
+
+total updates: 0
+link will be: rc://*/tw/dict/bible/names/eliakim
+
+made 5 insertions in 2KI
+made 1 insertions in 2CH
+made 1 insertions in NEH
+made 5 insertions in ISA
+total updates: 12
+link will be: rc://*/tw/dict/bible/names/eliakim
+
+total updates: 0
+link will be: rc://*/tw/dict/bible/names/elijah
+
+improper link @ 1KI 18:46, found: name/elijah FIXING
+made 1 insertions in 1KI
+made 24 insertions in 2KI
+made 1 insertions in 1CH
+made 1 insertions in 2CH
+made 2 insertions in EZR
+made 1 insertions in MAL
+total updates: 30
+link will be: rc://*/tw/dict/bible/names/elijah
+
+total updates: 0
+link will be: rc://*/tw/dict/bible/names/elisha
+
+made 55 insertions in 2KI
+total updates: 55
+link will be: rc://*/tw/dict/bible/names/elizabeth
+
+total updates: 0
+link will be: rc://*/tw/dict/bible/names/engedi
+
+made 2 insertions in JOS
+made 4 insertions in 1SA
+made 2 insertions in 2CH
+made 2 insertions in SNG
+made 2 insertions in EZK
+total updates: 12
+link will be: rc://*/tw/dict/bible/names/enoch
+
+made 2 insertions in GEN
+made 1 insertions in EXO
+made 1 insertions in NUM
+made 3 insertions in 1CH
+total updates: 7
+link will be: rc://*/tw/dict/bible/names/enoch
+
+total updates: 0
+link will be: rc://*/tw/dict/bible/names/esau
+
+made 2 insertions in GEN
+made 1 insertions in DEU
+made 2 insertions in MAL
+total updates: 5
+link will be: rc://*/tw/dict/bible/names/esau
+
+total updates: 0
+link will be: rc://*/tw/dict/bible/names/esther
+
+total updates: 0
+link will be: rc://*/tw/dict/bible/names/ethiopia
+
+total updates: 0
+link will be: rc://*/tw/dict/bible/names/eve
+
+made 1 insertions in GEN
+total updates: 1
+link will be: rc://*/tw/dict/bible/names/eve
+
+total updates: 0
+link will be: rc://*/tw/dict/bible/names/ezekiel
+
+made 1 insertions in 1CH
+made 2 insertions in EZK
+total updates: 3
+link will be: rc://*/tw/dict/bible/names/gabriel
+
+made 2 insertions in DAN
+total updates: 2
+link will be: rc://*/tw/dict/bible/names/gabriel
+
+total updates: 0
+link will be: rc://*/tw/dict/bible/names/gerar
+
+made 2 insertions in 2CH
+total updates: 2
+link will be: rc://*/tw/dict/bible/names/geshur
+
+made 1 insertions in JOS
+made 6 insertions in 2SA
+made 2 insertions in 1CH
+total updates: 9
+link will be: rc://*/tw/dict/bible/names/gethsemane
+
+total updates: 0
+link will be: rc://*/tw/dict/bible/names/gilgal
+
+made 1 insertions in DEU
+made 2 insertions in JDG
+made 2 insertions in 2SA
+made 2 insertions in 2KI
+made 1 insertions in NEH
+made 3 insertions in HOS
+made 3 insertions in AMO
+made 1 insertions in MIC
+total updates: 15
+link will be: rc://*/tw/dict/bible/names/girgashites
+
+made 1 insertions in 1CH
+total updates: 1
+link will be: rc://*/tw/dict/bible/names/golgotha
+
+total updates: 0
+link will be: rc://*/tw/dict/bible/names/goliath
+
+made 1 insertions in 2SA
+made 1 insertions in 1CH
+total updates: 2
+link will be: rc://*/tw/dict/bible/names/gomorrah
+
+made 2 insertions in DEU
+made 3 insertions in ISA
+made 3 insertions in JER
+made 1 insertions in AMO
+made 1 insertions in ZEP
+total updates: 10
+link will be: rc://*/tw/dict/bible/names/goshen
+
+total updates: 0
+link will be: rc://*/tw/dict/bible/names/greece
+
+made 2 insertions in GEN
+made 2 insertions in 1CH
+made 1 insertions in ISA
+made 2 insertions in EZK
+made 3 insertions in DAN
+made 1 insertions in ZEC
+total updates: 11
+link will be: rc://*/tw/dict/bible/names/greece
+
+total updates: 0
+link will be: rc://*/tw/dict/bible/names/habakkuk
+
+made 2 insertions in HAB
+total updates: 2
+link will be: rc://*/tw/dict/bible/names/hagar
+
+total updates: 0
+link will be: rc://*/tw/dict/bible/names/haggai
+
+made 9 insertions in HAG
+total updates: 9
+link will be: rc://*/tw/dict/bible/names/ham
+
+made 3 insertions in 1CH
+made 4 insertions in PSA
+total updates: 7
+link will be: rc://*/tw/dict/bible/names/hamor
+
+made 1 insertions in JDG
+total updates: 1
+link will be: rc://*/tw/dict/bible/names/hananiah
+
+made 5 insertions in 1CH
+made 1 insertions in 2CH
+made 1 insertions in EZR
+made 6 insertions in NEH
+made 11 insertions in JER
+made 5 insertions in DAN
+total updates: 29
+link will be: rc://*/tw/dict/bible/names/hannah
+
+total updates: 0
+link will be: rc://*/tw/dict/bible/names/haran
+
+made 1 insertions in 1CH
+total updates: 1
+link will be: rc://*/tw/dict/bible/names/herodias
+
+total updates: 0
+link will be: rc://*/tw/dict/bible/names/hilkiah
+
+made 11 insertions in 2KI
+made 5 insertions in 1CH
+made 8 insertions in 2CH
+made 1 insertions in EZR
+made 4 insertions in NEH
+made 3 insertions in ISA
+made 2 insertions in JER
+total updates: 34
+link will be: rc://*/tw/dict/bible/names/hittite
+
+made 1 insertions in NUM
+made 2 insertions in EZK
+total updates: 3
+link will be: rc://*/tw/dict/bible/names/hivite
+
+made 2 insertions in EXO
+made 1 insertions in DEU
+made 2 insertions in JDG
+made 1 insertions in 1CH
+made 1 insertions in 2CH
+total updates: 7
+link will be: rc://*/tw/dict/bible/names/hoshea
+
+made 2 insertions in NUM
+made 1 insertions in DEU
+made 8 insertions in 2KI
+made 1 insertions in 1CH
+made 1 insertions in NEH
+made 3 insertions in HOS
+total updates: 16
+link will be: rc://*/tw/dict/bible/names/hosea
+
+total updates: 0
+link will be: rc://*/tw/dict/bible/names/iconium
+
+total updates: 0
+link will be: rc://*/tw/dict/bible/names/isaiah
+
+made 13 insertions in 2KI
+made 4 insertions in 1CH
+made 3 insertions in 2CH
+made 2 insertions in EZR
+made 1 insertions in NEH
+made 16 insertions in ISA
+total updates: 39
+link will be: rc://*/tw/dict/bible/names/isaiah
+
+total updates: 0
+link will be: rc://*/tw/dict/bible/names/issachar
+
+made 11 insertions in NUM
+made 2 insertions in DEU
+made 3 insertions in JDG
+made 9 insertions in 1CH
+made 1 insertions in 2CH
+made 3 insertions in EZK
+total updates: 29
+link will be: rc://*/tw/dict/bible/names/issachar
+
+total updates: 0
+link will be: rc://*/tw/dict/bible/names/jacob
+
+made 1 insertions in EXO
+made 6 insertions in NUM
+made 8 insertions in DEU
+made 1 insertions in 2KI
+made 1 insertions in 1CH
+made 8 insertions in PSA
+made 3 insertions in ISA
+made 3 insertions in JER
+made 2 insertions in LAM
+made 2 insertions in EZK
+made 2 insertions in MIC
+made 1 insertions in MAL
+total updates: 38
+link will be: rc://*/tw/dict/bible/names/jacob
+
+total updates: 0
+link will be: rc://*/tw/dict/bible/names/jamessonofzebedee
+
+total updates: 0
+link will be: rc://*/tw/dict/bible/names/japheth
+
+made 2 insertions in 1CH
+total updates: 2
+link will be: rc://*/tw/dict/bible/names/jehoiada
+
+made 4 insertions in 2SA
+made 8 insertions in 2KI
+made 6 insertions in 1CH
+made 20 insertions in 2CH
+made 1 insertions in JER
+total updates: 39
+link will be: rc://*/tw/dict/bible/names/jehoiakim
+
+made 7 insertions in 2KI
+made 2 insertions in 1CH
+made 3 insertions in 2CH
+made 23 insertions in JER
+made 2 insertions in DAN
+total updates: 37
+link will be: rc://*/tw/dict/bible/names/jehoshaphat
+
+made 2 insertions in 2SA
+made 3 insertions in 2KI
+made 1 insertions in 1CH
+made 7 insertions in 2CH
+total updates: 13
+link will be: rc://*/tw/dict/bible/names/jehoshaphat
+
+total updates: 0
+link will be: rc://*/tw/dict/bible/names/jehu
+
+made 41 insertions in 2KI
+made 4 insertions in 1CH
+made 6 insertions in 2CH
+made 1 insertions in HOS
+total updates: 52
+link will be: rc://*/tw/dict/bible/names/jephthah
+
+made 1 insertions in JOS
+made 27 insertions in JDG
+total updates: 28
+link will be: rc://*/tw/dict/bible/names/jeremiah
+
+made 2 insertions in 1CH
+made 4 insertions in NEH
+made 8 insertions in JER
+total updates: 14
+link will be: rc://*/tw/dict/bible/names/jeremiah
+
+total updates: 0
+link will be: rc://*/tw/dict/bible/names/jericho
+
+made 1 insertions in 1CH
+total updates: 1
+link will be: rc://*/tw/dict/bible/names/jericho
+
+total updates: 0
+link will be: rc://*/tw/dict/bible/names/jeroboam
+
+improper link @ 1KI 12:26, found: namest/jeroboam FIXING
+made 1 insertions in 1KI
+made 24 insertions in 2KI
+made 1 insertions in 1CH
+made 19 insertions in 2CH
+made 1 insertions in HOS
+made 4 insertions in AMO
+total updates: 50
+link will be: rc://*/tw/dict/bible/names/jesse
+
+total updates: 0
+link will be: rc://*/tw/dict/bible/names/jesse
+
+total updates: 0
+link will be: rc://*/tw/dict/bible/names/jezebel
+
+made 7 insertions in 2KI
+total updates: 7
+link will be: rc://*/tw/dict/bible/names/jezebel
+
+total updates: 0
+link will be: rc://*/tw/dict/bible/names/joab
+
+made 101 insertions in 2SA
+made 24 insertions in 1CH
+made 2 insertions in EZR
+made 1 insertions in NEH
+made 1 insertions in PSA
+total updates: 129
+link will be: rc://*/tw/dict/bible/names/job
+
+made 56 insertions in JOB
+made 2 insertions in EZK
+total updates: 58
+link will be: rc://*/tw/dict/bible/names/job
+
+total updates: 0
+link will be: rc://*/tw/dict/bible/names/joel
+
+made 5 insertions in 1CH
+made 1 insertions in 2CH
+made 1 insertions in EZR
+made 1 insertions in NEH
+made 1 insertions in JOL
+total updates: 9
+link will be: rc://*/tw/dict/bible/names/joel
+
+total updates: 0
+link will be: rc://*/tw/dict/bible/names/johnthebaptist
+
+total updates: 0
+link will be: rc://*/tw/dict/bible/names/jonah
+
+made 1 insertions in 2KI
+total updates: 1
+link will be: rc://*/tw/dict/bible/names/jonah
+
+total updates: 0
+link will be: rc://*/tw/dict/bible/names/joppa
+
+total updates: 0
+link will be: rc://*/tw/dict/bible/names/joppa
+
+total updates: 0
+link will be: rc://*/tw/dict/bible/names/jordanriver
+
+made 12 insertions in NUM
+made 1 insertions in JDG
+made 6 insertions in 1CH
+made 1 insertions in JOB
+made 1 insertions in PSA
+made 1 insertions in ZEC
+total updates: 22
+link will be: rc://*/tw/dict/bible/names/jordanriver
+
+total updates: 0
+link will be: rc://*/tw/dict/bible/names/joshua
+
+made 6 insertions in NUM
+made 8 insertions in DEU
+made 1 insertions in 1CH
+made 1 insertions in HAG
+made 2 insertions in ZEC
+total updates: 18
+link will be: rc://*/tw/dict/bible/names/joshua
+
+total updates: 0
+link will be: rc://*/tw/dict/bible/names/josiah
+
+made 13 insertions in 2KI
+made 2 insertions in 1CH
+made 17 insertions in 2CH
+made 18 insertions in JER
+made 1 insertions in ZEP
+made 1 insertions in ZEC
+total updates: 52
+link will be: rc://*/tw/dict/bible/names/josiah
+
+total updates: 0
+link will be: rc://*/tw/dict/bible/names/jotham
+
+made 4 insertions in JDG
+made 7 insertions in 2KI
+made 3 insertions in 1CH
+made 6 insertions in 2CH
+made 2 insertions in ISA
+made 1 insertions in HOS
+made 1 insertions in MIC
+total updates: 24
+link will be: rc://*/tw/dict/bible/names/judea
+
+total updates: 0
+link will be: rc://*/tw/dict/bible/names/kedar
+
+made 1 insertions in GEN
+made 1 insertions in 1CH
+made 1 insertions in PSA
+made 1 insertions in SNG
+made 4 insertions in ISA
+made 3 insertions in JER
+made 1 insertions in EZK
+total updates: 12
+link will be: rc://*/tw/dict/bible/names/korah
+
+made 2 insertions in GEN
+made 1 insertions in EXO
+made 15 insertions in NUM
+made 5 insertions in 1CH
+made 11 insertions in PSA
+total updates: 34
+link will be: rc://*/tw/dict/bible/names/laban
+
+made 1 insertions in DEU
+total updates: 1
+link will be: rc://*/tw/dict/bible/names/lamech
+
+made 1 insertions in 1CH
+total updates: 1
+link will be: rc://*/tw/dict/bible/names/lamech
+
+total updates: 0
+link will be: rc://*/tw/dict/bible/names/lazarus
+
+total updates: 0
+link will be: rc://*/tw/dict/bible/names/leah
+
+made 1 insertions in GEN
+total updates: 1
+link will be: rc://*/tw/dict/bible/names/lebanon
+
+made 1 insertions in 1KI
+made 4 insertions in 2KI
+made 6 insertions in 2CH
+made 4 insertions in PSA
+made 5 insertions in SNG
+made 5 insertions in ISA
+made 2 insertions in JER
+made 4 insertions in EZK
+made 3 insertions in HOS
+made 1 insertions in NAM
+made 1 insertions in HAB
+made 2 insertions in ZEC
+total updates: 38
+link will be: rc://*/tw/dict/bible/names/leviathan
+
+made 2 insertions in JOB
+made 2 insertions in PSA
+made 2 insertions in ISA
+total updates: 6
+link will be: rc://*/tw/dict/bible/names/lot
+
+made 1 insertions in GEN
+made 2 insertions in DEU
+made 1 insertions in PSA
+total updates: 4
+link will be: rc://*/tw/dict/bible/names/lot
+
+total updates: 0
+link will be: rc://*/tw/dict/bible/names/luke
+
+total updates: 0
+link will be: rc://*/tw/dict/bible/names/lystra
+
+total updates: 0
+link will be: rc://*/tw/dict/bible/names/maacah
+
+made 1 insertions in GEN
+made 3 insertions in 2SA
+made 1 insertions in 1KI
+made 10 insertions in 1CH
+made 4 insertions in 2CH
+total updates: 19
+link will be: rc://*/tw/dict/bible/names/malachi
+
+made 1 insertions in MAL
+total updates: 1
+link will be: rc://*/tw/dict/bible/names/martha
+
+total updates: 0
+link will be: rc://*/tw/dict/bible/names/melchizedek
+
+made 1 insertions in GEN
+made 2 insertions in PSA
+total updates: 3
+link will be: rc://*/tw/dict/bible/names/melchizedek
+
+total updates: 0
+link will be: rc://*/tw/dict/bible/names/mesopotamia
+
+total updates: 0
+link will be: rc://*/tw/dict/bible/names/micah
+
+made 19 insertions in JDG
+made 9 insertions in 1CH
+made 2 insertions in 2CH
+made 1 insertions in NEH
+made 1 insertions in MIC
+total updates: 32
+link will be: rc://*/tw/dict/bible/names/michael
+
+made 1 insertions in NUM
+made 7 insertions in 1CH
+made 1 insertions in 2CH
+made 1 insertions in EZR
+made 3 insertions in DAN
+total updates: 13
+link will be: rc://*/tw/dict/bible/names/michael
+
+total updates: 0
+link will be: rc://*/tw/dict/bible/names/miriam
+
+made 8 insertions in NUM
+made 1 insertions in DEU
+made 2 insertions in 1CH
+made 1 insertions in MIC
+total updates: 12
+link will be: rc://*/tw/dict/bible/names/mordecai
+
+made 1 insertions in EZR
+made 1 insertions in NEH
+total updates: 2
+link will be: rc://*/tw/dict/bible/names/naaman
+
+made 1 insertions in GEN
+made 2 insertions in NUM
+made 11 insertions in 2KI
+made 2 insertions in 1CH
+total updates: 16
+link will be: rc://*/tw/dict/bible/names/naaman
+
+total updates: 0
+link will be: rc://*/tw/dict/bible/names/nahor
+
+made 1 insertions in GEN
+made 1 insertions in 1CH
+total updates: 2
+link will be: rc://*/tw/dict/bible/names/nahor
+
+total updates: 0
+link will be: rc://*/tw/dict/bible/names/nahum
+
+made 1 insertions in NAM
+total updates: 1
+link will be: rc://*/tw/dict/bible/names/nahum
+
+total updates: 0
+link will be: rc://*/tw/dict/bible/names/naphtali
+
+made 11 insertions in NUM
+made 4 insertions in DEU
+made 7 insertions in JDG
+made 1 insertions in 2KI
+made 7 insertions in 1CH
+made 2 insertions in 2CH
+made 1 insertions in PSA
+made 1 insertions in ISA
+made 3 insertions in EZK
+total updates: 37
+link will be: rc://*/tw/dict/bible/names/naphtali
+
+total updates: 0
+link will be: rc://*/tw/dict/bible/names/nathan
+
+made 13 insertions in 2SA
+improper link @ 1KI 1:32, found: other/nathan FIXING
+made 1 insertions in 1KI
+made 10 insertions in 1CH
+made 2 insertions in 2CH
+made 2 insertions in EZR
+made 1 insertions in PSA
+made 1 insertions in ZEC
+total updates: 30
+link will be: rc://*/tw/dict/bible/names/nathan
+
+total updates: 0
+link will be: rc://*/tw/dict/bible/names/nehemiah
+
+made 1 insertions in EZR
+made 2 insertions in NEH
+total updates: 3
+link will be: rc://*/tw/dict/bible/names/noah
+
+made 1 insertions in 1CH
+made 2 insertions in ISA
+made 2 insertions in EZK
+total updates: 5
+link will be: rc://*/tw/dict/bible/names/noah
+
+total updates: 0
+link will be: rc://*/tw/dict/bible/names/obadiah
+
+made 7 insertions in 1CH
+made 2 insertions in 2CH
+made 1 insertions in EZR
+made 2 insertions in NEH
+total updates: 12
+link will be: rc://*/tw/dict/bible/names/omri
+
+improper link @ 1KI 16:17, found: name/omri FIXING
+made 1 insertions in 1KI
+made 1 insertions in 2KI
+made 3 insertions in 1CH
+made 1 insertions in 2CH
+made 1 insertions in MIC
+total updates: 7
+link will be: rc://*/tw/dict/bible/names/paddanaram
+
+made 10 insertions in GEN
+total updates: 10
+link will be: rc://*/tw/dict/bible/names/perizzite
+
+total updates: 0
+link will be: rc://*/tw/dict/bible/names/philistia
+
+total updates: 0
+link will be: rc://*/tw/dict/bible/names/phinehas
+
+made 3 insertions in NUM
+made 1 insertions in JDG
+made 4 insertions in 1CH
+made 3 insertions in EZR
+made 1 insertions in PSA
+total updates: 12
+link will be: rc://*/tw/dict/bible/names/potiphar
+
+total updates: 0
+link will be: rc://*/tw/dict/bible/names/rabbah
+
+made 1 insertions in DEU
+made 2 insertions in JOS
+made 5 insertions in 2SA
+made 2 insertions in 1CH
+made 2 insertions in JER
+made 2 insertions in EZK
+made 1 insertions in AMO
+total updates: 15
+link will be: rc://*/tw/dict/bible/names/rachel
+
+made 2 insertions in GEN
+made 1 insertions in JER
+total updates: 3
+link will be: rc://*/tw/dict/bible/names/rachel
+
+total updates: 0
+link will be: rc://*/tw/dict/bible/names/rahab
+
+total updates: 0
+link will be: rc://*/tw/dict/bible/names/rahab
+
+total updates: 0
+link will be: rc://*/tw/dict/bible/names/ramah
+
+made 1 insertions in JDG
+made 1 insertions in 2KI
+made 1 insertions in 2CH
+made 1 insertions in JER
+made 1 insertions in HOS
+total updates: 5
+link will be: rc://*/tw/dict/bible/names/ramah
+
+total updates: 0
+link will be: rc://*/tw/dict/bible/names/rebekah
+
+total updates: 0
+link will be: rc://*/tw/dict/bible/names/rehoboam
+
+made 1 insertions in 1CH
+made 27 insertions in 2CH
+total updates: 28
+link will be: rc://*/tw/dict/bible/names/rehoboam
+
+total updates: 0
+link will be: rc://*/tw/dict/bible/names/rimmon
+
+made 3 insertions in JOS
+made 4 insertions in JDG
+made 3 insertions in 2SA
+made 2 insertions in 2KI
+made 2 insertions in 1CH
+made 1 insertions in ZEC
+total updates: 15
+link will be: rc://*/tw/dict/bible/names/ruth
+
+total updates: 0
+link will be: rc://*/tw/dict/bible/names/ruth
+
+total updates: 0
+link will be: rc://*/tw/dict/bible/names/samson
+
+made 38 insertions in JDG
+total updates: 38
+link will be: rc://*/tw/dict/bible/names/samson
+
+total updates: 0
+link will be: rc://*/tw/dict/bible/names/samuel
+
+made 1 insertions in NUM
+improper link @ 1SA 15:17, found: other/samuel FIXING
+link mismatch @ 1SA 25:1, not overridden, found: other/death
+made 2 insertions in 1SA
+made 7 insertions in 1CH
+made 1 insertions in 2CH
+made 1 insertions in PSA
+made 1 insertions in JER
+total updates: 13
+link will be: rc://*/tw/dict/bible/names/samuel
+
+total updates: 0
+link will be: rc://*/tw/dict/bible/names/saul
+
+made 3 insertions in GEN
+made 1 insertions in EXO
+made 1 insertions in NUM
+link mismatch @ 1SA 26:5, not overridden, found: names/david
+made 2 insertions in 1SA
+made 66 insertions in 2SA
+made 32 insertions in 1CH
+made 5 insertions in PSA
+made 1 insertions in ISA
+total updates: 111
+link will be: rc://*/tw/dict/bible/names/saul
+
+total updates: 0
+link will be: rc://*/tw/dict/bible/names/seth
+
+made 3 insertions in GEN
+made 1 insertions in 1CH
+total updates: 4
+link will be: rc://*/tw/dict/bible/names/seth
+
+total updates: 0
+link will be: rc://*/tw/dict/bible/names/shem
+
+made 3 insertions in 1CH
+total updates: 3
+link will be: rc://*/tw/dict/bible/names/shem
+
+total updates: 0
+link will be: rc://*/tw/dict/bible/names/sodom
+
+made 1 insertions in GEN
+made 2 insertions in DEU
+made 4 insertions in ISA
+made 3 insertions in JER
+made 1 insertions in LAM
+made 6 insertions in EZK
+made 1 insertions in AMO
+made 1 insertions in ZEP
+total updates: 19
+link will be: rc://*/tw/dict/bible/names/sodom
+
+total updates: 0
+link will be: rc://*/tw/dict/bible/names/solomon
+
+made 1 insertions in 2SA
+made 10 insertions in 1CH
+made 12 insertions in 2CH
+made 2 insertions in PSA
+made 3 insertions in SNG
+total updates: 28
+link will be: rc://*/tw/dict/bible/names/solomon
+
+total updates: 0
+link will be: rc://*/tw/dict/bible/names/stephen
+
+total updates: 0
+link will be: rc://*/tw/dict/bible/names/tarshish
+
+made 2 insertions in 1CH
+made 4 insertions in 2CH
+made 1 insertions in EST
+made 2 insertions in PSA
+made 7 insertions in ISA
+made 1 insertions in JER
+made 3 insertions in EZK
+total updates: 20
+link will be: rc://*/tw/dict/bible/names/terah
+
+made 2 insertions in NUM
+made 1 insertions in 1CH
+total updates: 3
+link will be: rc://*/tw/dict/bible/names/terah
+
+total updates: 0
+link will be: rc://*/tw/dict/bible/names/thomas
+
+total updates: 0
+link will be: rc://*/tw/dict/bible/names/timothy
+
+total updates: 0
+link will be: rc://*/tw/dict/bible/names/tirzah
+
+made 3 insertions in NUM
+made 2 insertions in 1KI
+made 2 insertions in 2KI
+made 1 insertions in SNG
+total updates: 8
+link will be: rc://*/tw/dict/bible/names/titus
+
+total updates: 0
+link will be: rc://*/tw/dict/bible/names/troas
+
+total updates: 0
+link will be: rc://*/tw/dict/bible/names/tychicus
+
+total updates: 0
+link will be: rc://*/tw/dict/bible/names/ur
+
+made 1 insertions in 1CH
+made 1 insertions in NEH
+total updates: 2
+link will be: rc://*/tw/dict/bible/names/uriah
+
+made 23 insertions in 2SA
+made 5 insertions in 2KI
+made 1 insertions in 1CH
+made 1 insertions in EZR
+made 3 insertions in NEH
+made 1 insertions in ISA
+made 3 insertions in JER
+total updates: 37
+link will be: rc://*/tw/dict/bible/names/uriah
+
+total updates: 0
+link will be: rc://*/tw/dict/bible/names/vashti
+
+total updates: 0
+link will be: rc://*/tw/dict/bible/names/zacchaeus
+
+total updates: 0
+link will be: rc://*/tw/dict/bible/names/zadok
+
+made 14 insertions in 2SA
+made 1 insertions in 2KI
+made 15 insertions in 1CH
+made 2 insertions in 2CH
+made 1 insertions in EZR
+made 5 insertions in NEH
+made 4 insertions in EZK
+total updates: 42
+link will be: rc://*/tw/dict/bible/names/zadok
+
+total updates: 0
+link will be: rc://*/tw/dict/bible/names/zebedee
+
+total updates: 0
+link will be: rc://*/tw/dict/bible/names/zechariahnt
+
+total updates: 0
+link will be: rc://*/tw/dict/bible/names/zechariahot
+
+made 4 insertions in 2KI
+made 12 insertions in 1CH
+made 9 insertions in 2CH
+made 4 insertions in EZR
+made 6 insertions in NEH
+made 1 insertions in ISA
+made 4 insertions in ZEC
+total updates: 40
+link will be: rc://*/tw/dict/bible/names/zedekiah
+
+made 6 insertions in 2KI
+made 2 insertions in 1CH
+made 4 insertions in 2CH
+made 1 insertions in NEH
+made 48 insertions in JER
+total updates: 61
+link will be: rc://*/tw/dict/bible/names/zephaniah
+
+made 1 insertions in 2KI
+made 1 insertions in 1CH
+made 5 insertions in JER
+made 1 insertions in ZEP
+made 2 insertions in ZEC
+total updates: 10
+link will be: rc://*/tw/dict/bible/names/zilpah
+
+made 7 insertions in GEN
+total updates: 7
+link will be: rc://*/tw/dict/bible/names/zoar
+
+made 1 insertions in DEU
+made 1 insertions in ISA
+made 1 insertions in JER
+total updates: 3
+total updates across all files: 3355
+link will be: rc://*/tw/dict/bible/other/curtain
+
+made 16 insertions in EXO
+made 6 insertions in NUM
+made 1 insertions in 2SA
+made 1 insertions in PSA
+made 1 insertions in ISA
+total updates: 25
+link will be: rc://*/tw/dict/bible/other/curtain
+
+made 15 insertions in EXO
+made 7 insertions in LEV
+made 2 insertions in NUM
+made 1 insertions in 2CH
+total updates: 25
+link will be: rc://*/tw/dict/bible/kt/altar
+
+made 1 insertions in 1KI
+made 6 insertions in HOS
+made 2 insertions in ZEC
+made 3 insertions in MAL
+total updates: 12
+link will be: rc://*/tw/dict/bible/other/curtain
+
+total updates: 0
+link will be: rc://*/tw/dict/bible/kt/tabernacle
+
+total updates: 0
+link will be: rc://*/tw/dict/bible/kt/ephod
+
+total updates: 0
+link will be: rc://*/tw/dict/bible/other/breastplate
+
+total updates: 0
+link will be: rc://*/tw/dict/bible/kt/arkofthecovenant
+
+made 1 insertions in GEN
+made 3 insertions in EXO
+made 5 insertions in 1KI
+made 1 insertions in PSA
+total updates: 10
+link will be: rc://*/tw/dict/bible/kt/sanctuary
+
+link mismatch @ EXO 15:17, not overridden, found: kt/holyplace
+total updates: 0
+link will be: rc://*/tw/dict/bible/other/cherubim
+
+link mismatch @ 1KI 6:32, not overridden, found: other/cherub
+link mismatch @ 1KI 6:32, not overridden, found: other/cherubim
+total updates: 0
+link will be: rc://*/tw/dict/bible/kt/atonementlid
+
+total updates: 0
+link will be: rc://*/tw/dict/bible/other/robe
+
+total updates: 0
+link will be: rc://*/tw/dict/bible/other/tunic
+
+total updates: 0
+link will be: rc://*/tw/dict/bible/kt/priest
+
+made 1 insertions in HOS
+total updates: 1
+link will be: rc://*/tw/dict/bible/names/aaron
+
+total updates: 0
+link will be: rc://*/tw/dict/bible/kt/sabbath
+
+made 1 insertions in HOS
+total updates: 1
+link will be: rc://*/tw/dict/bible/names/moses
+
+made 1 insertions in 1KI
+made 1 insertions in MAL
+total updates: 2
+link will be: rc://*/tw/dict/bible/other/curtain
+
+made 13 insertions in EXO
+made 2 insertions in NUM
+made 3 insertions in 1SA
+excluding 1KI
+made 1 insertions in 2CH
+made 1 insertions in JOB
+made 1 insertions in ZEC
+total updates: 21
+link will be: rc://*/tw/dict/bible/other/pillar
+
+made 31 insertions in EXO
+made 3 insertions in NUM
+made 2 insertions in DEU
+made 4 insertions in JDG
+made 6 insertions in 2KI
+made 1 insertions in 1CH
+made 8 insertions in 2CH
+made 4 insertions in NEH
+made 1 insertions in JOB
+made 2 insertions in PSA
+made 2 insertions in SNG
+made 7 insertions in JER
+made 2 insertions in EZK
+total updates: 73
+link will be: rc://*/tw/dict/bible/other/courtyard
+
+made 1 insertions in GEN
+made 26 insertions in EXO
+made 1 insertions in LEV
+made 6 insertions in NUM
+made 32 insertions in JOS - wrong! villages, rolled back
+made 3 insertions in 2KI
+made 8 insertions in 1CH
+made 4 insertions in 2CH
+made 5 insertions in NEH
+made 8 insertions in EST
+made 3 insertions in PSA
+made 2 insertions in ISA
+made 3 insertions in JER
+made 38 insertions in EZK
+made 1 insertions in ZEC
+total updates: 141
+link will be: rc://*/tw/dict/bible/other/sheep
+
+made 1 insertions in GEN
+made 16 insertions in EXO
+made 16 insertions in LEV
+made 26 insertions in NUM
+made 1 insertions in DEU
+link mismatch @ 1KI 6:31, not overridden, found: other/pillar
+made 1 insertions in 2KI
+made 3 insertions in 2CH
+made 2 insertions in PSA
+made 2 insertions in ISA
+made 1 insertions in JER
+made 34 insertions in EZK
+made 7 insertions in DAN
+total updates: 110

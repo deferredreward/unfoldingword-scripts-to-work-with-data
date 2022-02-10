@@ -1,7 +1,6 @@
 import io, json
 
-ignoreList = ["the", "a", "an", "and", "or", "but", "of", "to", "at", "from", "in", "his", "my", "according", "for", "by", "your", "toward", "is", "who", "that", "which", "he", "they", "them", "so", "him", "her", "this", "that", "she", "you"]
-# %USER%
+ignoreList = ["the", "a", "an", "and", "or", "but", "of", "to", "at", "from", "in", "his", "my", "according", "for", "by", "your", "toward", "is", "who", "that", "which", "he", "they", "them", "so", "him", "her", "this", "that", "she", "you", "as", "on", "are", "me", "it", "its", "have", "then", "be", "I", "than", "had", "their"]
 tCoreProjectsDir = "C:/Users/benja/translationCore/projects/"
 projects = ["exo", "est",  "neh", "jon" , "oba", "rut", "ezr"]  # finished (or mostly) BPs
 
@@ -11,7 +10,7 @@ bookPostfix = '_book'
 
 pathToAlignment = "/.apps/translationCore/alignmentData/"
 
-strongs = input("Enter strong #: ").upper()
+strongs = input("Enter strong # to check alignments: ").upper()
 print()
 
 def findTranslations(prefix):

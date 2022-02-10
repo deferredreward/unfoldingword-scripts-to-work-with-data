@@ -56,7 +56,7 @@ def insertAllNames():
                 except:
                     # we need to remove any other elements that might have a duplicate strongs # or we're going to get things wrong, for instance: Judas or Simon or David will all have to be determined by a human b/c there's more than one of them
                     blacklist.append(number) 
-    print(blacklist)
+    # print(blacklist)
     for bad in blacklist: # drop all things that are potential duplicates
         if bad in namesDict:
             namesDict.pop(bad)
@@ -102,7 +102,7 @@ def makeNewID(idList):
 #     TWLinks.pop(location)
 
 def userInput():
-    strongs = input("Enter strong #: ").upper()
+    strongs = input("Enter strong # to create TWLs: ").upper()
     linkToInsert, tagToInsert = makeLink(input("Enter twarticle: ").lower().strip())
     themainthing(strongs, linkToInsert, tagToInsert)
 
@@ -123,7 +123,7 @@ def themainthing(strongs, linkToInsert, tagToInsert):
         TWLinks = []
         currentBook = filename.split('-')[1].rstrip('.usfm') # from filename      
         # temp exclusions for other's work:
-        exclusions = ["1KI"]
+        exclusions = [""]
         if currentBook in exclusions: 
             print("excluding " + currentBook, file=open('output.txt','a'))
             continue
@@ -252,5 +252,5 @@ def themainthing(strongs, linkToInsert, tagToInsert):
     print("total updates: " + str(totalInsertions), file=open('output.txt','a'))
     return totalInsertions
 
-# userInput()
-insertAllNames()
+userInput()
+#insertAllNames()
