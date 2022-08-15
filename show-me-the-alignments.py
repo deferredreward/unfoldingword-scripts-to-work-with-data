@@ -2,7 +2,7 @@ import io, json
 
 ignoreList = ["the", "a", "an", "and", "or", "but", "of", "to", "at", "from", "in", "his", "my", "according", "for", "by", "your", "toward", "is", "who", "that", "which", "he", "they", "them", "so", "him", "her", "this", "that", "she", "you", "as", "on", "are", "me", "it", "its", "have", "then", "be", "I", "than", "had", "their"]
 tCoreProjectsDir = "C:/Users/benja/translationCore/projects/"
-projects = ["exo", "est",  "neh", "jon" , "oba", "rut", "ezr"]  # finished (or mostly) BPs
+projects = ["exo", "est",  "neh", "jon" , "oba", "rut", "ezr", "luk", "1th", "phm", "jud", "php", "2pe", "jas", "jhn", "col", "1pe", "2ti", "2jn", "tit", "3jn", "eph", "1ti", "1jn" ]  # finished (or mostly) BPs
 
 ultPrefix = "en_ult_"
 ustPrefix = 'en_ust_'
@@ -53,7 +53,9 @@ def findTranslations(prefix):
                             verseNum += 1
 
                     chapter += 1
-        except: continue
+        except: 
+            
+            continue
     if prefix == ultPrefix: print("ULT:")
     else: print("UST:")
     sorted_items = sorted(possibleTranslations.items(),  key = lambda item : len(item[1]))
