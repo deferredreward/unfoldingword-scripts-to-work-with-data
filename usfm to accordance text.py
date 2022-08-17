@@ -68,7 +68,7 @@ def turnUSFMintoTxt(filesLocation, uSLt):
                         title = ''
                     if paragraph:
                         if not titleLine:
-                            newLine += ' ¶'
+                            newLine += ' \u00B6'
                         else: 
                             newLine += ' <br>'
                             titleLine = False
@@ -109,7 +109,7 @@ def turnUSFMintoTxt(filesLocation, uSLt):
                 newLine += book.strip() + ' '
         
 
-    with io.open("C:/Users/benja/Downloads/" + uSLt + ' for Accordance.txt', 'w', encoding='utf-8') as f:
+    with io.open("C:/Users/benja/Downloads/" + uSLt + ' for Accordance.txt', 'w', encoding='ansi') as f:
         f.writelines(bibleAsList)
 
 turnUSFMintoTxt("C:/Users/benja/Downloads/ust/*.usfm", "UST")
