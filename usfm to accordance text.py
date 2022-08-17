@@ -14,6 +14,7 @@ def turnUSFMintoTxt(filesLocation, uSLt):
         with io.open(filename, encoding='utf8') as f:
             bookLines = f.readlines()
 
+
         chapter = ''
         paragraph = True
         book = ''
@@ -23,9 +24,13 @@ def turnUSFMintoTxt(filesLocation, uSLt):
         title = ''
         titleLine = False
 
+        lineNum = 0
         for line in bookLines:
-            if line.startswith('\\v'):
+            if line.startswith('\\li') and len(line) > 4:
+                newLine = newLine.rstrip() + ' <br>' +  line[4:]                
+            elif line.startswith('\\v'):
                 if not newChapter:
+                    if newLine[-5:] == " <br>\n": newLine = newLine[:-5] + '\n'
                     bibleAsList.append(newLine)
                     newLine = ''            
                 verseNumber = re.split('\s', line)[1]
@@ -44,19 +49,23 @@ def turnUSFMintoTxt(filesLocation, uSLt):
                                 titleLine = False
                             paragraph = False
                         verseContent = re.split('\s', line, 2)[2]
-                        verseContent = verseContent.replace('\\sp', '<br>')
+                        verseContent = verseContent.replace('\\sp', ' <br>')
                         verseContent = verseContent.replace('\\qs*', '')
                         verseContent = verseContent.replace('\\qs', ' ')
-                        verseContent = verseContent.replace('\\q1', '<br>')
-                        verseContent = verseContent.replace('\\q2', '<br>')
-                        verseContent = verseContent.replace('\\q', '<br>')
-                        verseContent = verseContent.replace('\\p', '<br>')
-                        verseContent = verseContent.replace('\\li', '<br>')
-                        verseContent = verseContent.replace('\\m', '<br>')
+                        verseContent = verseContent.replace('\\q1', ' <br>')
+                        verseContent = verseContent.replace('\\q2', ' <br>')
+                        verseContent = verseContent.replace('\\q3', ' <br>')
+                        verseContent = verseContent.replace('\\q', ' <br>')
+                        verseContent = verseContent.replace('\\pi2', ' <br>')
+                        verseContent = verseContent.replace('\\pi', ' <br>')
+                        verseContent = verseContent.replace('\\p', ' <br>')
+                        verseContent = verseContent.replace('\\li', ' <br>')
+                        verseContent = verseContent.replace('\\m', ' <br>')
                         verseContent = verseContent.replace('\\f +', '<i><b>fn:</b> ')
                         verseContent = verseContent.replace('\\f*', '</i>')               
                         newLine += " " + verseContent
                         if newChapter:
+                            if newLine[-5:] == " <br>\n": newLine = newLine[:-5] + '\n'
                             bibleAsList.append(newLine)
                             newLine = '' 
                             newChapter = False
@@ -68,25 +77,29 @@ def turnUSFMintoTxt(filesLocation, uSLt):
                         title = ''
                     if paragraph:
                         if not titleLine:
-                            newLine += ' \u00B6'
+                            newLine += ' ¶'
                         else: 
                             newLine += ' <br>'
                             titleLine = False
                         paragraph = False
                     verseContent = re.split('\s', line, 2)[2]
-                    verseContent = verseContent.replace('\\sp', '<br>')
+                    verseContent = verseContent.replace('\\sp', ' <br>')
                     verseContent = verseContent.replace('\\qs*', '')
                     verseContent = verseContent.replace('\\qs', ' ')
-                    verseContent = verseContent.replace('\\q1', '<br>')
-                    verseContent = verseContent.replace('\\q2', '<br>')
-                    verseContent = verseContent.replace('\\q', '<br>')
-                    verseContent = verseContent.replace('\\p', '<br>')
-                    verseContent = verseContent.replace('\\li', '<br>')
-                    verseContent = verseContent.replace('\\m', '<br>')
+                    verseContent = verseContent.replace('\\q1', ' <br>')
+                    verseContent = verseContent.replace('\\q2', ' <br>')
+                    verseContent = verseContent.replace('\\q3', ' <br>')
+                    verseContent = verseContent.replace('\\q', ' <br>')
+                    verseContent = verseContent.replace('\\pi2', ' <br>')
+                    verseContent = verseContent.replace('\\pi', ' <br>')
+                    verseContent = verseContent.replace('\\p', ' <br>')
+                    verseContent = verseContent.replace('\\li', ' <br>')
+                    verseContent = verseContent.replace('\\m', ' <br>')
                     verseContent = verseContent.replace('\\f +', '<i><b>fn:</b> ')
                     verseContent = verseContent.replace('\\f*', '</i>')               
                     newLine += " " + verseContent
                     if newChapter:
+                        if newLine[-5:] == " <br>\n": newLine = newLine[:-5] + '\n'
                         bibleAsList.append(newLine)
                         newLine = '' 
                         newChapter = False
@@ -107,9 +120,9 @@ def turnUSFMintoTxt(filesLocation, uSLt):
                 if book[0] == '1' or book[0] == '2' or book[0] == '3':
                     book = book[0] + book[2:]
                 newLine += book.strip() + ' '
-        
+        lineNum += 1
 
-    with io.open("C:/Users/benja/Downloads/" + uSLt + ' for Accordance.txt', 'w', encoding='ansi') as f:
+    with io.open("C:/Users/benja/Downloads/" + uSLt + ' for Accordance.txt', 'w', encoding='utf-8') as f:
         f.writelines(bibleAsList)
 
 turnUSFMintoTxt("C:/Users/benja/Downloads/ust/*.usfm", "UST")
