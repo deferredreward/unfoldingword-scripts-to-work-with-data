@@ -186,6 +186,7 @@ for TNfile in glob.glob(TNfilesLocation):
         xmlOutput.append("<Type></Type>")
         xmlOutput.append("<ConflictType />")
         xmlOutput.append(f"<Verse>{verseContent}</Verse>")
+        xmlOutput.append("<AssignedUser>unfoldingWord</AssignedUser>")
         xmlOutput.append("<ReplyToUser />")
         xmlOutput.append("<HideInTextWindow>true</HideInTextWindow>")
         xmlOutput.append(f'<Contents>{OccurrenceNote.rstrip()}</Contents>')
