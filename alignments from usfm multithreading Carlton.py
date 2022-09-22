@@ -2,8 +2,8 @@ import os, glob, re, sys, datetime, multiprocessing, time
 from functools import partial
 
 
-ULTfilesLocation = "C:/Users/benja/Documents/uwgit/en_ult/*.usfm"
-USTfilesLocation = "C:/Users/benja/Documents/uwgit/en_ust/*.usfm"
+ULTfilesLocation = "/Users/lizz/Downloads/ult/*.usfm"
+USTfilesLocation = "/Users/lizz/Downloads/ust/*.usfm"
 
 def findStrongsAlignments(filename, strongs):
     ignoreList = ["the", "a", "an", "and", "or", "but", "of", "to", "at", "from", "in", "his", "my", "according", "for", "by", "your", "toward", "is", "who", "that", "which", "he", "they", "them", "so", "him", "her", "this", "that", "she", "you", "as", "on", "are", "me", "it", "its", "have", "then", "be", "I", "than", "had", "their", "s", "o", 'we', 'has', 'been', 'being']
@@ -67,7 +67,7 @@ def findStrongsAlignments(filename, strongs):
         # "2TI",
         # "TIT",
         # "PHM",
-        "HEB",
+        # "HEB",
         # "JAS",
         # "1PE",
         # "2PE",
@@ -117,7 +117,7 @@ def findStrongsAlignments(filename, strongs):
             try:
                 if re.search(strongs, line):
                     alignedWords = re.findall(reWords, line)
-
+                    # add zeros so it will sort later
                     if len(currentVerse) == 1:
                         currentVerse = f'0{currentVerse}' if currentBook != 'PSA' else f'00{currentVerse}'
                     elif len(currentVerse) == 2 and currentBook == 'PSA':
@@ -207,13 +207,12 @@ if __name__ == "__main__":
     with open(os.path.join(sys.path[0], resultFileByRef), "w") as f:
         f.write("Reference\tULT\tUST")
         for key in ULTptSortedbyVerse.keys():
-            f.write('\n') 
+            f.write('\n')        
             trimmedkey = key.replace(' 0', ' ')  
             trimmedkey = trimmedkey.replace(' 0', ' ')       
             trimmedkey = trimmedkey.replace(':0', ':')       
             trimmedkey = trimmedkey.replace(':0', ':')       
             f.write(f'{trimmedkey}\t')
-
             for value in ULTptSortedbyVerse[key]:
                 f.write(value.lower())
                 if len(ULTpossibletranslations[value]) > 1:

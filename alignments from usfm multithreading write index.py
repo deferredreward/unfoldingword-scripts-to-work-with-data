@@ -5,11 +5,11 @@ from functools import partial
 ULTfilesLocation = "C:/Users/benja/Documents/uwgit/en_ult/*.usfm"
 USTfilesLocation = "C:/Users/benja/Documents/uwgit/en_ust/*.usfm"
 
-def findStrongsAlignments(filename, strongs):
+def findStrongsAlignments(filename):
     ignoreList = ["the", "a", "an", "and", "or", "but", "of", "to", "at", "from", "in", "his", "my", "according", "for", "by", "your", "toward", "is", "who", "that", "which", "he", "they", "them", "so", "him", "her", "this", "that", "she", "you", "as", "on", "are", "me", "it", "its", "have", "then", "be", "I", "than", "had", "their", "s", "o", 'we', 'has', 'been', 'being']
 
     booksToCheck = [
-        "GEN",
+        # "GEN",
         # "EXO",
         # "LEV",
         # "NUM",
@@ -92,8 +92,7 @@ def findStrongsAlignments(filename, strongs):
     # for filename in glob.glob(filesLocation):
     if filename[-11].upper() == "A": return
     if filename[-8:-5] not in booksToCheck: return
-    if strongs[0].upper() == "H" and int(filename[-11]) > 4: return
-    elif strongs[0].upper() == "G" and int(filename[-11]) < 4: return
+
     currentBook = ''
     currentChapter = ''
     currentVerse = ''
@@ -115,19 +114,8 @@ def findStrongsAlignments(filename, strongs):
             except: 
                 currentVerse = oldVerse
             try:
-                if re.search(strongs, line):
+                if re.search(reStrongs, line):
                     alignedWords = re.findall(reWords, line)
-
-                    if len(currentVerse) == 1:
-                        currentVerse = f'0{currentVerse}' if currentBook != 'PSA' else f'00{currentVerse}'
-                    elif len(currentVerse) == 2 and currentBook == 'PSA':
-                        currentVerse = f'0{currentVerse}'
-
-                    if len(currentChapter) == 1:
-                        currentChapter = f'0{currentChapter}' if currentBook != 'PSA' else f'00{currentChapter}'
-                    elif len(currentChapter) == 2 and currentBook == 'PSA':
-                        currentChapter = f'0{currentChapter}'
-
                     location = currentBook + " " + currentChapter + ":" + currentVerse
                     for translation in alignedWords:                        
                         if len(translation) == 0: continue
@@ -186,8 +174,7 @@ if __name__ == "__main__":
     print('\nchecking UST: ',end = '')
     STpossibletranslations = []
     with multiprocessing.Pool() as pool:
-        myfunction = partial(findStrongsAlignments, strongs = strongsnum)
-        STpossibletranslations = pool.map(myfunction, glob.glob(USTfilesLocation))
+        STpossibletranslations = pool.map(findStrongsAlignments, glob.glob(USTfilesLocation))
         USTpossibletranslations = sortByABC(STpossibletranslations)
 
     ULTptSortedbyVerse = sortByVerse(ULTpossibletranslations)
@@ -207,13 +194,8 @@ if __name__ == "__main__":
     with open(os.path.join(sys.path[0], resultFileByRef), "w") as f:
         f.write("Reference\tULT\tUST")
         for key in ULTptSortedbyVerse.keys():
-            f.write('\n') 
-            trimmedkey = key.replace(' 0', ' ')  
-            trimmedkey = trimmedkey.replace(' 0', ' ')       
-            trimmedkey = trimmedkey.replace(':0', ':')       
-            trimmedkey = trimmedkey.replace(':0', ':')       
-            f.write(f'{trimmedkey}\t')
-
+            f.write('\n')        
+            f.write(f'{key}\t')
             for value in ULTptSortedbyVerse[key]:
                 f.write(value.lower())
                 if len(ULTpossibletranslations[value]) > 1:
