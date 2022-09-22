@@ -7,7 +7,7 @@ outputlocation = "C:/Users/benja/Documents/uwgit/scriptoutput/"
 
 
 def findStrongsAlignments(strongs, filesLocation):
-
+    strongs = strongs.upper()
     ignoreList = ["the", "a", "an", "and", "or", "but", "of", "to", "at", "from", "in", "his", "my", "according", "for", "by", "your", "toward", "is", "who", "that", "which", "he", "they", "them", "so", "him", "her", "this", "that", "she", "you", "as", "on", "are", "me", "it", "its", "have", "then", "be", "I", "than", "had", "their", "s", "o", 'we', 'has', 'been', 'being']
 
     booksToCheck = [
@@ -95,8 +95,8 @@ def findStrongsAlignments(strongs, filesLocation):
     for filename in glob.glob(filesLocation):
         if filename[-11] == "A": continue
         if filename[-8:-5] not in booksToCheck: continue
-        if strongs[0].upper() == "H" and int(filename[-11]) > 4: continue
-        elif strongs[0].upper() == "G" and int(filename[-11]) < 4: continue
+        if strongs[0] == "H" and int(filename[-11]) > 4: continue
+        elif strongs[0] == "G" and int(filename[-11]) < 4: continue
         currentBook = ''
         currentChapter = ''
         currentVerse = ''
@@ -109,36 +109,36 @@ def findStrongsAlignments(strongs, filesLocation):
             for line in booklines:
                 oldChapter = currentChapter
                 oldVerse = currentVerse
-            if contains(line, '\\c'):
-                currentChapter = re.search(reChapter, line).group(1)
-            else:
-                currentChapter = oldChapter
-            if contains(line, '\\v'):
-                currentVerse = re.search(reVerse, line).group(1)
-            else: 
-                currentVerse = oldVerse
-            if contains(line, strongs):
-                alignedWords = re.findall(reWords, line)
-                # fix up the ordering
-                if len(currentVerse) == 1:
-                    currentVerse = f'0{currentVerse}' if currentBook != 'PSA' else f'00{currentVerse}'
-                elif len(currentVerse) == 2 and currentBook == 'PSA':
-                    currentVerse = f'0{currentVerse}'
+                if contains(line, '\\c'):
+                    currentChapter = re.search(reChapter, line).group(1)
+                else:
+                    currentChapter = oldChapter
+                if contains(line, '\\v'):
+                    currentVerse = re.search(reVerse, line).group(1)
+                else: 
+                    currentVerse = oldVerse
+                if contains(line, strongs):
+                    alignedWords = re.findall(reWords, line)
+                    # fix up the ordering
+                    if len(currentVerse) == 1:
+                        currentVerse = f'0{currentVerse}' if currentBook != 'PSA' else f'00{currentVerse}'
+                    elif len(currentVerse) == 2 and currentBook == 'PSA':
+                        currentVerse = f'0{currentVerse}'
 
-                if len(currentChapter) == 1:
-                    currentChapter = f'0{currentChapter}' if currentBook != 'PSA' else f'00{currentChapter}'
-                elif len(currentChapter) == 2 and currentBook == 'PSA':
-                    currentChapter = f'0{currentChapter}'
+                    if len(currentChapter) == 1:
+                        currentChapter = f'0{currentChapter}' if currentBook != 'PSA' else f'00{currentChapter}'
+                    elif len(currentChapter) == 2 and currentBook == 'PSA':
+                        currentChapter = f'0{currentChapter}'
 
-                location = currentBook + " " + currentChapter + ":" + currentVerse
-                for translation in alignedWords:                        
-                    if len(translation) == 0: continue
-                    translationLower = translation.lower()
-                    if translationLower in ignoreList: continue
-                    if translationLower not in possibleTranslations: 
-                            possibleTranslations.update({translationLower:[location]})
-                    elif translationLower in possibleTranslations:
-                            possibleTranslations[translationLower].append(location)
+                    location = currentBook + " " + currentChapter + ":" + currentVerse
+                    for translation in alignedWords:                        
+                        if len(translation) == 0: continue
+                        translationLower = translation.lower()
+                        if translationLower in ignoreList: continue
+                        if translationLower not in possibleTranslations: 
+                                possibleTranslations.update({translationLower:[location]})
+                        elif translationLower in possibleTranslations:
+                                possibleTranslations[translationLower].append(location)
 
     sorted_items = {key: value for key, value in sorted(possibleTranslations.items())}
     sortedPossibleTranslations = dict(sorted_items)
