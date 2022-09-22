@@ -1,9 +1,11 @@
-import os, glob, re, sys, datetime, multiprocessing, time
+from operator import contains
+import os, glob, re, datetime, multiprocessing, time
 from functools import partial
 
 
 ULTfilesLocation = "C:/Users/benja/Documents/uwgit/en_ult/*.usfm"
 USTfilesLocation = "C:/Users/benja/Documents/uwgit/en_ust/*.usfm"
+outputlocation = "C:/Users/benja/Documents/uwgit/scriptoutput/"
 
 def findStrongsAlignments(filename):
     ignoreList = ["the", "a", "an", "and", "or", "but", "of", "to", "at", "from", "in", "his", "my", "according", "for", "by", "your", "toward", "is", "who", "that", "which", "he", "they", "them", "so", "him", "her", "this", "that", "she", "you", "as", "on", "are", "me", "it", "its", "have", "then", "be", "I", "than", "had", "their", "s", "o", 'we', 'has', 'been', 'being']
@@ -105,9 +107,11 @@ def findStrongsAlignments(filename):
         for line in booklines:
             oldChapter = currentChapter
             oldVerse = currentVerse
-            try:                 
+            if contains(line, '\\c'):
+            # try:                 
                 currentChapter = re.search(reChapter, line).group(1)
-            except: 
+            # except: 
+            else:
                 currentChapter = oldChapter
             try:                
                 currentVerse = re.search(reVerse, line).group(1)
@@ -116,6 +120,17 @@ def findStrongsAlignments(filename):
             try:
                 if re.search(reStrongs, line):
                     alignedWords = re.findall(reWords, line)
+
+                    if len(currentVerse) == 1:
+                        currentVerse = f'0{currentVerse}' if currentBook != 'PSA' else f'00{currentVerse}'
+                    elif len(currentVerse) == 2 and currentBook == 'PSA':
+                        currentVerse = f'0{currentVerse}'
+
+                    if len(currentChapter) == 1:
+                        currentChapter = f'0{currentChapter}' if currentBook != 'PSA' else f'00{currentChapter}'
+                    elif len(currentChapter) == 2 and currentBook == 'PSA':
+                        currentChapter = f'0{currentChapter}'
+
                     location = currentBook + " " + currentChapter + ":" + currentVerse
                     for translation in alignedWords:                        
                         if len(translation) == 0: continue
@@ -191,7 +206,7 @@ if __name__ == "__main__":
     resultFileByRef = f"{strongsnum}={topWord}_result sorted by verse at {now}.tsv"
     resultFileByWord = f"{strongsnum}={topWord}_result sorted by ULT rendering at {now}.txt"
 
-    with open(os.path.join(sys.path[0], resultFileByRef), "w") as f:
+    with open(os.path.join(outputlocation, resultFileByRef), "w") as f:
         f.write("Reference\tULT\tUST")
         for key in ULTptSortedbyVerse.keys():
             f.write('\n')        
@@ -208,15 +223,15 @@ if __name__ == "__main__":
                     if len(USTpossibletranslations[value]) > 1:
                         f.write(f' {str(len(USTpossibletranslations[value]))}x')
                     f.write(', ')
-        print('\n' + str(os.path.join(sys.path[0], resultFileByRef)) + " written.\n")
+        print('\n' + str(os.path.join(outputlocation, resultFileByRef)) + " written.\n")
 
-    with open(os.path.join(sys.path[0], resultFileByWord), "w") as f:
+    with open(os.path.join(outputlocation, resultFileByWord), "w") as f:
         f.write("Strongs#: " + strongsnum + '\n')
         f.write('ULT:\n')
         makeResultByWordFile(f, ULTpossibletranslations)
         f.write('\n\nUST:\n')
         makeResultByWordFile(f, USTpossibletranslations)
-        print('\n' + str(os.path.join(sys.path[0], resultFileByRef)) + " written.\n")
+        print('\n' + str(os.path.join(outputlocation, resultFileByRef)) + " written.\n")
 
     duration = time.time() - start_time
     print(f"Duration {duration} seconds")

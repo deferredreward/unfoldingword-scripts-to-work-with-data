@@ -1,3 +1,4 @@
+from operator import contains
 import os, glob, re, sys, datetime, multiprocessing, time
 from functools import partial
 
@@ -106,38 +107,36 @@ def findStrongsAlignments(filename, strongs):
         for line in booklines:
             oldChapter = currentChapter
             oldVerse = currentVerse
-            try:                 
+            if contains(line, '\\c'):
                 currentChapter = re.search(reChapter, line).group(1)
-            except: 
+            else:
                 currentChapter = oldChapter
-            try:                
+            if contains(line, '\\v'):
                 currentVerse = re.search(reVerse, line).group(1)
-            except: 
+            else: 
                 currentVerse = oldVerse
-            try:
-                if re.search(strongs, line):
-                    alignedWords = re.findall(reWords, line)
-                    # add zeros so it will sort later
-                    if len(currentVerse) == 1:
-                        currentVerse = f'0{currentVerse}' if currentBook != 'PSA' else f'00{currentVerse}'
-                    elif len(currentVerse) == 2 and currentBook == 'PSA':
-                        currentVerse = f'0{currentVerse}'
+            if contains(line, strongs):
+                alignedWords = re.findall(reWords, line)
+                # add zeros so it will sort later
+                if len(currentVerse) == 1:
+                    currentVerse = f'0{currentVerse}' if currentBook != 'PSA' else f'00{currentVerse}'
+                elif len(currentVerse) == 2 and currentBook == 'PSA':
+                    currentVerse = f'0{currentVerse}'
 
-                    if len(currentChapter) == 1:
-                        currentChapter = f'0{currentChapter}' if currentBook != 'PSA' else f'00{currentChapter}'
-                    elif len(currentChapter) == 2 and currentBook == 'PSA':
-                        currentChapter = f'0{currentChapter}'
+                if len(currentChapter) == 1:
+                    currentChapter = f'0{currentChapter}' if currentBook != 'PSA' else f'00{currentChapter}'
+                elif len(currentChapter) == 2 and currentBook == 'PSA':
+                    currentChapter = f'0{currentChapter}'
 
-                    location = currentBook + " " + currentChapter + ":" + currentVerse
-                    for translation in alignedWords:                        
-                        if len(translation) == 0: continue
-                        translationLower = translation.lower()
-                        if translationLower in ignoreList: continue
-                        if translationLower not in possibleTranslations: 
-                                possibleTranslations.update({translationLower:[location]})
-                        elif translationLower in possibleTranslations:
-                                possibleTranslations[translationLower].append(location)
-            except: pass
+                location = currentBook + " " + currentChapter + ":" + currentVerse
+                for translation in alignedWords:                        
+                    if len(translation) == 0: continue
+                    translationLower = translation.lower()
+                    if translationLower in ignoreList: continue
+                    if translationLower not in possibleTranslations: 
+                            possibleTranslations.update({translationLower:[location]})
+                    elif translationLower in possibleTranslations:
+                            possibleTranslations[translationLower].append(location)
     # print(possibleTranslations)
     return possibleTranslations
 
@@ -151,12 +150,20 @@ def sortByVerse(possibleTranslations):
     sortedPossibleTranslations = dict(sorted_items)
     return sortedPossibleTranslations
     
+def trimRef(ref):
+    trimmedRef = ref.replace(' 0', ' ')  
+    trimmedRef = trimmedRef.replace(' 0', ' ')       
+    trimmedRef = trimmedRef.replace(':0', ':')       
+    trimmedRef = trimmedRef.replace(':0', ':')    
+    return trimmedRef
+
 def makeResultByWordFile(file, possibleTranslations):        
     for key in possibleTranslations.keys():
         f.write('\n')        
         f.write(key.lower() + " : " + str(len(possibleTranslations[key])) + 'x in: ')
-        for values in possibleTranslations[key]:
-            f.write(values.lower())
+        for value in possibleTranslations[key]:
+            trimmedValue = trimRef(value)
+            f.write(trimmedValue.lower())
             f.write(', ')
 
 def sortByABC(possibleTranslations):
@@ -208,11 +215,8 @@ if __name__ == "__main__":
         f.write("Reference\tULT\tUST")
         for key in ULTptSortedbyVerse.keys():
             f.write('\n')        
-            trimmedkey = key.replace(' 0', ' ')  
-            trimmedkey = trimmedkey.replace(' 0', ' ')       
-            trimmedkey = trimmedkey.replace(':0', ':')       
-            trimmedkey = trimmedkey.replace(':0', ':')       
-            f.write(f'{trimmedkey}\t')
+            trimmedKey = trimRef(key)   
+            f.write(f'{trimmedKey}\t')
             for value in ULTptSortedbyVerse[key]:
                 f.write(value.lower())
                 if len(ULTpossibletranslations[value]) > 1:
