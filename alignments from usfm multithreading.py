@@ -9,6 +9,7 @@ outputlocation = "C:/Users/benja/Documents/uwgit/scriptoutput/"
 
 
 def findStrongsAlignments(filename, strongs):
+    strongs = strongs.upper()
     ignoreList = ["the", "a", "an", "and", "or", "but", "of", "to", "at", "from", "in", "his", "my", "according", "for", "by", "your", "toward", "is", "who", "that", "which", "he", "they", "them", "so", "him", "her", "this", "that", "she", "you", "as", "on", "are", "me", "it", "its", "have", "then", "be", "I", "than", "had", "their", "s", "o", 'we', 'has', 'been', 'being']
 
     booksToCheck = [
@@ -157,6 +158,11 @@ def trimRef(ref):
     trimmedRef = trimmedRef.replace(' 0', ' ')       
     trimmedRef = trimmedRef.replace(':0', ':')       
     trimmedRef = trimmedRef.replace(':0', ':')    
+    if trimmedRef[0] not in ['1','2','3']:
+        trimmedRef = trimmedRef.capitalize()
+    else:
+        n = trimmedRef[0]
+        trimmedRef = f'{n} {trimmedRef[1:].capitalize()}'    
     return trimmedRef
 
 def makeResultByWordFile(file, possibleTranslations):        
@@ -165,7 +171,7 @@ def makeResultByWordFile(file, possibleTranslations):
         f.write(key.lower() + " : " + str(len(possibleTranslations[key])) + 'x in: ')
         for value in possibleTranslations[key]:
             trimmedValue = trimRef(value)
-            f.write(trimmedValue.lower())
+            f.write(trimmedValue.capitalize())
             f.write(', ')
 
 def sortByABC(possibleTranslations):
