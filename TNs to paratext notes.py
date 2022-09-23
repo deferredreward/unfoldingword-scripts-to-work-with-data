@@ -155,6 +155,12 @@ for TNfile in glob.glob(TNfilesLocation):
                     foundVerse = True
                 else: verseLocation += 1
             verseContent = scriptureBook[verseLocation].split(' ', 2)[2]
+            # removes bracketing or usfm \add tags
+            verseContent.replace('{','')
+            verseContent.replace('}','')
+            verseContent.replace('\\add*','')
+            verseContent.replace('\\add ','')
+
         else: verseContent = ''
 
         xmlOutput.append(f'<Comment Thread="{tcID}" User="unfoldingWord" VerseRef="{Book} {Chapter}:{Verse}" Language="en-US" Date="{now}">')
