@@ -1,7 +1,7 @@
 import io, os
 
 # CHANGE THIS to the path to your TWL file, it might be in your downloads directory
-filename = "C:/Users/benja/Documents/uwgit/en_twl/twl_EXO.tsv"
+filename = "C:/Users/benja/Documents/uwgit/en_twl/twl_PSA.tsv"
 os.rename(filename,filename.replace('.tsv','.old'))
 filename = filename.replace('.tsv','.old')
 twbaselink = "rc://*/tw/dict/bible"

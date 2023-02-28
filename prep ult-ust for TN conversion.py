@@ -11,8 +11,10 @@ def changebracketsToAdd(filesLocation):
             old = read.readlines()
         with open(usfmFile, 'w', encoding = 'utf8') as write:        
             for line in old:
-                newline = line.replace('{',r'\add ')
-                newline = newline.replace('}',r'\add*')
+                newline = line.replace('{','')
+                newline = newline.replace('}','')
+                newline = line.replace(r'\add ','')
+                newline = newline.replace(r'\add*','')
                 # newline = newline.replace(r'\add* \add ',' ')
                 write.write(newline)
 
