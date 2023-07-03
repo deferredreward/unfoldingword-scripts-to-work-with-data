@@ -88,7 +88,7 @@ async function main() {
 
             // Find the most different alternative
             let mostDifferentAlt = findMostDifferent(source1, source2, validAltList);
-            
+
             return mostDifferentAlt;
         });
 
@@ -189,15 +189,43 @@ async function main() {
             let source1 = verseDict1[reference];
             let source2 = verseDict2[reference];
 
-
+            row['Note'] = row['Note'].replace(/[{}]/g, "");
             let validAlternatives = await generateAlternatives(row['Note'], source1, source2);
 
             // Ignore any blank items in validAlternatives
             validAlternatives = validAlternatives.filter(alt => alt.trim() !== "");
 
+            // Drop the AT from the front of the note (it's already been captured elsewhere)
             // Replace anything in the first group of the regex in every note without touching what's in the 2nd group
             let regexRemove = /^“.*?”\.? ?([A-Z]|\n|\r|$)(.*)/;
             row['Note'] = row['Note'].replace(regexRemove, '$1$2' || '');
+
+            // check for quotes in the note that match the ULT and mark them with ** (markdown bold)
+            /*  This isn't quite a precise matching expression
+             let regex = /“(.*?)”/g; // Regular expression to match all quoted text
+             let match;
+             while ((match = regex.exec(row['Note'])) !== null) {
+                 let quotedText = match[1];
+                 if (source1.includes(quotedText)) {
+                     // If the quoted text is in source1, replace the quotes with markdown bold
+                     let boldText = `**${quotedText}**`;
+                     row['Note'] = row['Note'].replace(`“${quotedText}”`, boldText);
+                 }
+             }
+  */
+            // this should be a precise matching expression
+            let regex = /“(.*?)”/g; // Regular expression to match all quoted text
+            let match;
+            while ((match = regex.exec(row['Note'])) !== null) {
+                let quotedText = match[1].replace(/[.,;:!?]+$/, ""); // Removing trailing punctuation
+                let regexExactMatch = new RegExp(`\\b${quotedText}\\b`, 'g');
+                if (regexExactMatch.test(source1)) {
+                    // If the quoted text is in source1 as an exact match, replace the quotes with markdown bold
+                    let boldText = `**${quotedText}**`;
+                    row['Note'] = row['Note'].replace(`“${quotedText}”`, boldText);
+                }
+            }
+
 
             if (validAlternatives.length > 0) {
 
