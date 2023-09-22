@@ -75,3 +75,10 @@ voice
 walk
 water
 written
+boast
+name
+pastor
+horeb
+astray
+courtyard
+know-information
