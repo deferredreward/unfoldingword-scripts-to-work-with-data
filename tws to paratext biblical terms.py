@@ -3,9 +3,9 @@ from operator import contains
 from pathlib import Path
 import glob, multiprocessing, os
 
-TWL_Location = 'C:/Users/benja/Documents/uwgit/en_twl/*.tsv'
-TW_Location = 'C:/Users/benja/Documents/uwgit/en_tw/bible/'
-output_Location = 'C:/Users/benja/Documents/uwgit/scriptoutput/'
+TWL_Location = 'C:/Users/benja/Documents/GitHub/en_twl/*.tsv'
+TW_Location = 'C:/Users/benja/Documents/GitHub/en_tw/bible/'
+output_Location = 'C:/Users/benja/Documents/GitHub/scriptoutput/'
 
 def createTWLtoBibleReferenceKey(fileLocation):
     thisBookTWsAreAt = {}

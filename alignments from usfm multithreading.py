@@ -3,9 +3,9 @@ import os, glob, re, datetime, multiprocessing, time
 from functools import partial
 
 
-ULTfilesLocation = "C:/Users/benja/Documents/uwgit/en_ult/*.usfm"
-USTfilesLocation = "C:/Users/benja/Documents/uwgit/en_ust/*.usfm"
-outputlocation = "C:/Users/benja/Documents/uwgit/scriptoutput/"
+ULTfilesLocation = "C:/Users/benja/Documents/GitHub/en_ult/*.usfm"
+USTfilesLocation = "C:/Users/benja/Documents/GitHub/en_ust/*.usfm"
+outputlocation = "C:/Users/benja/Documents/GitHub/scriptoutput/"
 
 
 def findStrongsAlignments(filename, strongs):

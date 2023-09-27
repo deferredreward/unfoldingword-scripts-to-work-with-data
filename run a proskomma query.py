@@ -1,7 +1,7 @@
 
 import subprocess, json, datetime, time
 start_time = time.time()
-pR = subprocess.run(['node','C:/Users/benja/Documents/uwgit/my_proskomma_tutorial/tutorial.js'], capture_output=True)
+pR = subprocess.run(['node','C:/Users/benja/Documents/GitHub/my_proskomma_tutorial/tutorial.js'], capture_output=True)
 duration = time.time() - start_time
 print(f"Proskomma took {duration} seconds")
 
@@ -11,7 +11,7 @@ duration = time.time() - start_time
 print(f"Decoding took {duration} seconds")
 
 start_time = time.time()
-with open("C:/Users/benja/Documents/uwgit/scriptoutput/prokomma.json", 'w', encoding='utf8') as f:
+with open("C:/Users/benja/Documents/GitHub/scriptoutput/prokomma.json", 'w', encoding='utf8') as f:
     f.write(proskommaResults)
 duration = time.time() - start_time
 print(f"Writing took {duration} seconds")

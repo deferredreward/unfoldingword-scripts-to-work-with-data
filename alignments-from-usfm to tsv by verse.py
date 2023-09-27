@@ -1,9 +1,9 @@
 from operator import contains
 import os, glob, re, datetime, time
 
-ULTfilesLocation = "C:/Users/benja/Documents/uwgit/en_ult/*.usfm"
-USTfilesLocation = "C:/Users/benja/Documents/uwgit/en_ust/*.usfm"
-outputlocation = "C:/Users/benja/Documents/uwgit/scriptoutput/"
+ULTfilesLocation = "C:/Users/benja/Documents/GitHub/en_ult/*.usfm"
+USTfilesLocation = "C:/Users/benja/Documents/GitHub/en_ust/*.usfm"
+outputlocation = "C:/Users/benja/Documents/GitHub/scriptoutput/"
 
 
 def findStrongsAlignments(strongs, filesLocation):

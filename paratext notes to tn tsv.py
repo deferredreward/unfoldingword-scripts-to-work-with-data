@@ -14,7 +14,7 @@ def makeNewID():
     return newID
 
 # CHANGE THIS to the path to your TN file, it might be in your downloads directory
-filename = "C:/Users/benja/Documents/uwgit/en_tn/en_tn_19-PSA.tsv"
+filename = "C:/Users/benja/Documents/GitHub/en_tn/en_tn_19-PSA.tsv"
 
 with io.open(filename, encoding='utf8') as f:
     for line in f:

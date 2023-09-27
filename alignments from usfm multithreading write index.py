@@ -3,9 +3,9 @@ import os, glob, re, datetime, multiprocessing, time
 from functools import partial
 
 
-ULTfilesLocation = "C:/Users/benja/Documents/uwgit/en_ult/*.usfm"
-USTfilesLocation = "C:/Users/benja/Documents/uwgit/en_ust/*.usfm"
-outputlocation = "C:/Users/benja/Documents/uwgit/scriptoutput/"
+ULTfilesLocation = "C:/Users/benja/Documents/GitHub/en_ult/*.usfm"
+USTfilesLocation = "C:/Users/benja/Documents/GitHub/en_ust/*.usfm"
+outputlocation = "C:/Users/benja/Documents/GitHub/scriptoutput/"
 
 def findStrongsAlignments(filename):
     ignoreList = ["the", "a", "an", "and", "or", "but", "of", "to", "at", "from", "in", "his", "my", "according", "for", "by", "your", "toward", "is", "who", "that", "which", "he", "they", "them", "so", "him", "her", "this", "that", "she", "you", "as", "on", "are", "me", "it", "its", "have", "then", "be", "I", "than", "had", "their", "s", "o", 'we', 'has', 'been', 'being']

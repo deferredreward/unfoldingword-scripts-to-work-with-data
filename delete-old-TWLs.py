@@ -1,8 +1,8 @@
 
 from glob import glob
 
-TWLfilesLocation = "C:/Users/benja/Documents/uwgit/en_obs-twl/*.tsv"
-DeleteList = "C:/Users/benja/Documents/uwgit/unfoldingword-scripts-to-work-with-data/twltodelete.txt"
+TWLfilesLocation = "C:/Users/benja/Documents/GitHub/en_obs-twl/*.tsv"
+DeleteList = "C:/Users/benja/Documents/GitHub/unfoldingword-scripts-to-work-with-data/twltodelete.txt"
 toDelete = []
 
 with open(DeleteList) as read:

@@ -1,6 +1,6 @@
 import io, glob
 
-twbasedir = "C:/Users/benja/Documents/uwgit/en_tw/bible"
+twbasedir = "C:/Users/benja/Documents/GitHub/en_tw/bible"
 
 kt = "/kt"
 names = "/names"

@@ -6,9 +6,9 @@ import re, glob
 
 brokenbooks = []
 
-TNfilesLocation = "C:/Users/benja/Documents/uwgit/en_tn/*.tsv"
+TNfilesLocation = "C:/Users/benja/Documents/GitHub/en_tn/*.tsv"
 ULTfilesLocation = "C:/Users/benja/Downloads/ult/"
-TAfilesLocation = "C:/Users/benja/Documents/uwgit/en_ta/translate/"
+TAfilesLocation = "C:/Users/benja/Documents/GitHub/en_ta/translate/"
 
 
 now = datetime.now().strftime("%Y-%m-%dT%H:%M:%S")

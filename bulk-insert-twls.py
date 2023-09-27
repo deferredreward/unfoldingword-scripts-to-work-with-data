@@ -20,7 +20,7 @@ def insertAllNames():
     allNamesTotal = 0
     namesDict = {}  # H1162: boaz
     blacklist = []
-    for file in glob.glob("C:/Users/benja/Documents/uwgit/en_tw/bible/names/*.md"):
+    for file in glob.glob("C:/Users/benja/Documents/GitHub/en_tw/bible/names/*.md"):
         article = file.split("\\")[-1].replace('.md','')  
         strongsNumbers = []
         with io.open(file, encoding='utf8') as f:
