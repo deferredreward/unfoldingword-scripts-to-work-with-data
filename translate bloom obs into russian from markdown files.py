@@ -1,42 +1,48 @@
 import os
 import re
 
-def process_files(english_path, russian_path, html_path):
-    # Open and read the English and Russian files
-    with open(english_path, 'r', encoding='utf-8') as en_file, \
-         open(russian_path, 'r', encoding='utf-8') as ru_file:
-        en_lines = en_file.readlines()
-        ru_lines = ru_file.readlines()
+HTML_PATH = 'C:\\Users\\benja\\Downloads\\Open Bible Stories.htm'
+EN_DIR = 'C:\\Users\\benja\\Documents\\GitHub\\en_obs\\content'
+RU_DIR = 'C:\\Users\\benja\\Downloads\\ru_obs-v9\\ru_obs\\content'
+en_ru_mapping = {}
+missing_lines = []
 
-    # Read the HTML file
-    with open(html_path, 'r', encoding='utf-8') as html_file:
-        html_content = html_file.read()
+def get_partial_match_key(p_content, en_ru_map):
+    # Find the best matching key for a given p_content
+    matching_keys = [key for key in en_ru_map if key.startswith(p_content)]
+    if matching_keys:
+        # Return the longest matching key (to get the most specific match)
+        return max(matching_keys, key=len)
+    missing_lines.append(p_content)
+    return None
 
-    # Iterate through the English and Russian lines
-    for en_line, ru_line in zip(en_lines, ru_lines):
-        en_line = en_line.strip()
-        ru_line = ru_line.strip()
 
-        # Check if the line is not an image or title
-        if not en_line.startswith("#") and \
-           not en_line.startswith("!"):
-            # Convert the line to a pattern that matches the corresponding HTML tag
-            pattern = re.escape(f"<p>{en_line}</p>")
-            replacement = f"<p>{ru_line}</p>"
-            html_content = re.sub(pattern, replacement, html_content, count=1)  # Replace only the first occurrence
+# Read the English and Russian contents and populate the en_ru_mapping dictionary
+for filename in os.listdir(EN_DIR):
+    if filename.endswith('.md'):
+        with open(os.path.join(EN_DIR, filename), 'r', encoding='utf-8') as en_file, \
+             open(os.path.join(RU_DIR, filename), 'r', encoding='utf-8') as ru_file:
 
-    # Write the updated content back to the HTML file
-    with open(html_path, 'w', encoding='utf-8') as html_file:
-        html_file.write(html_content)
+            # Drop blank lines and strip trailing/leading spaces and specific characters
+            en_lines = [line.strip().lstrip('# ').strip('_') for line in en_file.readlines() if line.strip()]
+            ru_lines = [line.strip().lstrip('# ').strip('_') for line in ru_file.readlines() if line.strip()]
 
-if __name__ == "__main__":
-    english_dir = "C:\\Users\\benja\\Documents\\GitHub\\en_obs\\content"
-    russian_dir = "C:\\Users\\benja\\Downloads\\ru_obs-v9\\ru_obs\\content"
-    html_path = "C:\\Users\\benja\\Downloads\\Open Bible Stories.htm"
+            for en_line, ru_line in zip(en_lines, ru_lines):
+                en_ru_mapping[en_line] = ru_line
 
-    # Assuming filenames are the same for corresponding English and Russian files
-    for filename in os.listdir(english_dir):
-        if filename.endswith(".md"):
-            english_path = os.path.join(english_dir, filename)
-            russian_path = os.path.join(russian_dir, filename)
-            process_files(english_path, russian_path, html_path)
+# Process the HTML file
+with open(HTML_PATH, 'r', encoding='utf-8') as html_file:
+    html_content = html_file.read()
+    p_matches = re.findall(r'<p>(.*?)</p>', html_content)
+
+    for p_content in p_matches:
+        matching_key = get_partial_match_key(p_content, en_ru_mapping)
+        if matching_key:
+            html_content = html_content.replace(f'<p>{p_content}</p>', f'<p>{en_ru_mapping[matching_key]}</p>', 1)
+
+with open(HTML_PATH.replace('.htm', '-translated.htm'), 'w', encoding='utf-8') as out_file:
+    out_file.write(html_content)
+
+# Write missing lines to missing.txt
+with open('C:\\Users\\benja\\Downloads\\missing.txt', 'w', encoding='utf-8') as missing_file:
+    missing_file.write('\n'.join(missing_lines))
