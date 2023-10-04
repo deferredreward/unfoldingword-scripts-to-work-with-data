@@ -8,14 +8,16 @@ en_ru_mapping = {}
 missing_lines = []
 
 def get_partial_match_key(p_content, en_ru_map):
-    # Find the best matching key for a given p_content
+    # First, try for a full match.
+    if p_content in en_ru_map:
+        return p_content
+    # If full match fails, then look for startswith match.
     matching_keys = [key for key in en_ru_map if key.startswith(p_content)]
     if matching_keys:
         # Return the longest matching key (to get the most specific match)
         return max(matching_keys, key=len)
     missing_lines.append(p_content)
     return None
-
 
 # Read the English and Russian contents and populate the en_ru_mapping dictionary
 for filename in os.listdir(EN_DIR):
@@ -34,6 +36,7 @@ for filename in os.listdir(EN_DIR):
 with open(HTML_PATH, 'r', encoding='utf-8') as html_file:
     html_content = html_file.read()
     p_matches = re.findall(r'<p>(.*?)</p>', html_content)
+    p_matches = [p for p in p_matches if p.strip()]  # Filter out blank matches
 
     for p_content in p_matches:
         matching_key = get_partial_match_key(p_content, en_ru_mapping)
