@@ -70,7 +70,7 @@ const bookDictionary = {
 
 let BPready = ['GEN', 'EXO', 'RUT', 'EZR', 'EST', 'NEH', 'OBA', 'JON', 'MAT', 'MRK', 'LUK', 'JHN', 'ACT', 'ROM', '1CO', '2CO', 'GAL', 'EPH', 'PHP', 'COL', '1TH', '2TH', '1TI', '2TI', 'TIT', 'PHM', 'HEB', 'JAS', '1PE', '2PE', '1JN', '2JN', '3JN', 'JUD', 'REV'];
 
-// BPready = ['3JN'];
+// BPready = ['GEN'];
 // console.log('here');
 const fs = require('fs');
 const fse = require('fs-extra');
@@ -273,8 +273,8 @@ function writeParatextNote(book, ref, id, glQuote, occurrence, note, wholeVerse)
 
     if (glQuote) {
         if (wholeVerse.includes('{')) {
-            wholeVerse = wholeVerse.replace('{','');
-            wholeVerse = wholeVerse.replace('}','');
+            wholeVerse = wholeVerse.replace(/\{/g,'');
+            wholeVerse = wholeVerse.replace(/\}/g,'');
         }
         if (occurrence > 1) {
             let i = -1;
