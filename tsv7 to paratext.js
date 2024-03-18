@@ -70,8 +70,8 @@ const bookDictionary = {
 
 let BPready = ['GEN', 'EXO', 'RUT', 'EZR', 'EST', 'NEH', 'OBA', 'JON', 'MAT', 'MRK', 'LUK', 'JHN', 'ACT', 'ROM', '1CO', '2CO', 'GAL', 'EPH', 'PHP', 'COL', '1TH', '2TH', '1TI', '2TI', 'TIT', 'PHM', 'HEB', 'JAS', '1PE', '2PE', '1JN', '2JN', '3JN', 'JUD', 'REV'];
 
-// BPready = ['RUT'];
-
+// BPready = ['3JN'];
+// console.log('here');
 const fs = require('fs');
 const fse = require('fs-extra');
 const path = require('path');
@@ -83,13 +83,13 @@ let id;
 
 // Paths for sourceBook and targetBook files
 const sourceBookPaths = {
-    ot: 'C:\\Users\\benja\\Documents\\uwgit\\hbo_uhb',
-    nt: 'C:\\Users\\benja\\Documents\\uwgit\\el-x-koine_ugnt'
+    ot: 'C:\\Users\\benja\\Documents\\GitHub\\hbo_uhb',
+    nt: 'C:\\Users\\benja\\Documents\\GitHub\\el-x-koine_ugnt'
 };
 
 // paths for other files
-const targetBookPath = 'C:\\Users\\benja\\Documents\\uwgit\\en_ult';
-const notesStringPath = 'C:\\Users\\benja\\Documents\\uwgit\\en_tn';
+const targetBookPath = 'C:\\Users\\benja\\Documents\\GitHub\\en_ult';
+const notesStringPath = 'C:\\Users\\benja\\Documents\\GitHub\\en_tn';
 
 // const files = fs.readdirSync(targetBookPath);
 
@@ -107,7 +107,7 @@ let doc = create(normal)
     .ele('CommentList')
     .ele('Comment', {
         Thread: 'LicenseInfo',
-        User: 'Benjamin Wright',
+        User: 'unfoldingWord',
         VerseRef: 'GEN 1:0',
         Language: 'en-US',
         Date: getTimestamp(),
@@ -270,7 +270,12 @@ async function getFolderTitleDictionary(dirPath) {
 function writeParatextNote(book, ref, id, glQuote, occurrence, note, wholeVerse) {
     // console.log(book, ref, id, glQuote, occurrence, note, wholeVerse);
     let startPosition, contextBefore, contextAfter;
+
     if (glQuote) {
+        if (wholeVerse.includes('{')) {
+            wholeVerse = wholeVerse.replace('{','');
+            wholeVerse = wholeVerse.replace('}','');
+        }
         if (occurrence > 1) {
             let i = -1;
             while (occurrence-- && i++ < wholeVerse.length) {
@@ -282,6 +287,7 @@ function writeParatextNote(book, ref, id, glQuote, occurrence, note, wholeVerse)
             startPosition = wholeVerse.indexOf(glQuote);
         }
         if (glQuote.includes('&')) {
+            if (glQuote.includes(', &')) {glQuote = glQuote.replace(', &', ' &')}
             contextBefore = "Occurrences of: "
             contextAfter = ` ${wholeVerse}`;
         } else {
@@ -339,7 +345,7 @@ function writeParatextNote(book, ref, id, glQuote, occurrence, note, wholeVerse)
 
 async function main() {
     try { // Processing for each book
-        const dictionary = await getFolderTitleDictionary('C:\\Users\\benja\\Documents\\uwgit\\en_ta\\translate');
+        const dictionary = await getFolderTitleDictionary('C:\\Users\\benja\\Documents\\GitHub\\en_ta\\translate');
 
         for (let book of books) {
 
@@ -488,6 +494,7 @@ async function main() {
 
                     //find simple verse links
                     appendedNote = appendedNote.replace(/( verse )\[(\d{1,3})\]\(.*?md\)/g, 'v$2');
+                    appendedNote = appendedNote.replace(/\(verse (\d{1,3})\)/g, '(v$1)');
                     appendedNote = appendedNote.replace(/( v )\[(\d{1,3})\]\(.*?md\)/g, 'v$2');
                     appendedNote = appendedNote.replace(/( v. )\[(\d{1,3})\]\(.*?md\)/g, 'v$2');
                     appendedNote = appendedNote.replace(/( verses )\[(\d{1,3}.*?)\]\(.*?md\)/g, 'v$2');
@@ -510,10 +517,10 @@ async function main() {
         }
 
         // Write XML to file
-        fs.writeFileSync('C:\\Users\\benja\\Downloads\\Notes_Benjamin Wright.xml', doc.end({ prettyPrint: true }));
+        fs.writeFileSync('C:\\Users\\benja\\Downloads\\Notes_unfoldingWord.xml', doc.end({ prettyPrint: true }));
     }
     catch (error) {
-        fs.writeFileSync('C:\\Users\\benja\\Downloads\\Notes_Benjamin Wright.xml', doc.end({ prettyPrint: true }));
+        fs.writeFileSync('C:\\Users\\benja\\Downloads\\Notes_unfoldingWord.xml', doc.end({ prettyPrint: true }));
         console.log(id);//, supportRef, quote, occurrence, note, book, ref);
         console.error(error);
         // Handle the error here if needed
