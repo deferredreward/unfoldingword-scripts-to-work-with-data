@@ -19,7 +19,12 @@ def docx_to_json(input_file, output_file):
                 field_index = 0
         else:
             if field_index < len(fields):
-                current_entry[fields[field_index]] = paragraph.text.strip()
+                if fields[field_index] == "alternateTranslations":
+                    # Split the alternate translations
+                    translations = [t.strip() for t in paragraph.text.split(" OR ")]
+                    current_entry[fields[field_index]] = translations
+                else:
+                    current_entry[fields[field_index]] = paragraph.text.strip()
                 field_index += 1
 
     if current_entry:
