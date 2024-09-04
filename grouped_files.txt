@@ -1,0 +1,49 @@
+[Missing: call.md]
+kt\call-speakloudly.md
+kt\call-toname.md
+kt\call-tosummon.md
+
+age.md (in root)
+other\age-timeperiod.md
+
+bear.md (in root)
+other\bear-carryphysicaloremotional burden.md
+other\bear-heldresponsiblefor.md
+other\bear-witness_testify.md
+
+beg.md (in root)
+other\beg-formoney.md
+
+court.md (in root)
+other\court-legal.md
+
+[Missing: deliver.md]
+other\deliver-toharm.md
+
+dishonor.md (in root)
+other\dishonor-object.md
+
+generation.md (in root)
+other\generation-groupofdescendants.md
+other\generation-peoplewholiveinsametimeperiod.md
+
+hard.md (in root)
+other\hard-unyielding.md
+
+house.md (in root)
+other\house-descendants_nation.md
+
+know.md (in root)
+other\know-relationship.md
+
+labor.md (in root)
+other\labor-birthing.md
+
+profit.md (in root)
+other\profit-spiritual.md
+
+proud.md (in root)
+other\proud-positivesense.md
+
+subject.md (in root)
+other\subject-topic.md
