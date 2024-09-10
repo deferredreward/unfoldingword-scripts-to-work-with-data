@@ -38,6 +38,31 @@ def create_tables(cursor):
         FOREIGN KEY (aligned_verse_id) REFERENCES Aligned_Verse(id)
     )
     ''')
+    cursor.execute('''
+    CREATE TABLE IF NOT EXISTS translation_words (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        book TEXT,
+        chapter INTEGER,
+        verse INTEGER,
+        twl_id TEXT,
+        tags TEXT,
+        OrigWords TEXT,
+        TWLink TEXT
+    )
+    ''')
+
+    cursor.execute('''
+    CREATE TABLE IF NOT EXISTS translation_word_links (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        book TEXT,
+        chapter INTEGER,
+        verse INTEGER,
+        translation_word_id INTEGER,
+        bible_verse_id INTEGER,
+        FOREIGN KEY (translation_word_id) REFERENCES translation_words(id),
+        FOREIGN KEY (bible_verse_id) REFERENCES Bible_Verse(id)
+    )
+    ''')
 
 def get_next_db_name(base_name="BookPackage"):
     i = 1
@@ -47,12 +72,14 @@ def get_next_db_name(base_name="BookPackage"):
             return db_name
         i += 1
 
-def create_new_db():
-    db_name = get_next_db_name()
+def prepare_db(db_name=None):
+    if not db_name:
+        db_name = get_next_db_name()    
+        print(f"Creating database: {db_name}")
+    else: print(f"Using database: {db_name}")
     conn = sqlite3.connect(db_name)
     cursor = conn.cursor()
     create_tables(cursor)
     conn.commit()
-    conn.close()
-    print(f"Created new database: {db_name}")
+    conn.close()    
     return db_name

@@ -78,8 +78,8 @@ def parse_aligned_usfm(file_path):
             print(f"No aligned words found in file: {file_path}")
         else:
             print(f"Found {len(aligned_words)} aligned words in file: {file_path}.")
-            for i, word in enumerate(aligned_words[2770:], 1):
-                print(f"{i}. {word}")
+            # for i, word in enumerate(aligned_words[2770:], 1):
+            #     print(f"{i}. {word}")
 
         return aligned_words
 

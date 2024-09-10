@@ -15,11 +15,16 @@ def insert_aligned_data(aligned_data, db_path, clear_table=False):
         seen_combinations = set()
         current_chapter = None
         inserted_count = 0
-
+        current_book = None
         for book, chapter, verse, gl_word, gl_occurrence, gl_occurrences, x_content, h_occurrence, h_occurrences in aligned_data:
+            if book != current_book:
+                print(f"\nProcessing: {book} ", end="", flush=True) # Some user feedback
+                current_book = book
+
             if chapter != current_chapter:
                 seen_combinations = set()
                 current_chapter = chapter
+                print(f"{chapter}, ", end="", flush=True)
 
             unique_key = (book, chapter, verse, gl_word, gl_occurrence, gl_occurrences)
 
@@ -63,7 +68,8 @@ def insert_aligned_data(aligned_data, db_path, clear_table=False):
                 ''', (bible_verse_id, aligned_verse_id, orig_word, gl_word))
                 inserted_count += 1
             else:
-                print(f"No matching Bible_Verse found for {book} {chapter}:{verse} - {x_content} (occurrence {h_occurrence} of {h_occurrences})")
+                with open('error_log-b.txt', 'a', encoding='utf-8') as error_log:
+                    error_log.write(f"No matching Bible_Verse found for {book} {chapter}:{verse} - {x_content} (occurrence {h_occurrence} of {h_occurrences})\n")
 
         conn.commit()
         print(f"Successfully inserted {inserted_count} entries into the word_alignment table.")
