@@ -1,3 +1,7 @@
 my_project_env/
 newTWLs/
 .env
+data/
+*.pyc
+*.db
+*.sqlite

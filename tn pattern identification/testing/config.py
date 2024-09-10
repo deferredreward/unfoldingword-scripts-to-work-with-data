@@ -1,0 +1,5 @@
+ORIGL_USFM_DIRECTORY = "./data/origL"
+ALIGNED_USFM_DIRECTORY = "./data/ult"
+TN_DIRECTORY = "./data/tn"
+TWL_DIRECTORY = "./data/twl"
+DB_PATH = "./data/aligned-bible-with-tns-twls.db"
