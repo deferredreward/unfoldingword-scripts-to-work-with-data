@@ -18,8 +18,11 @@ def parse_aligned_usfm(file_path):
             current_verse = int(verses[i])
             verse_content = verses[i+1]
             
+
             zaln_starts = list(re.finditer(r'\\zaln-s\s+\|([^\\]*)', verse_content))
             
+            
+
             for j, start_match in enumerate(zaln_starts):
                 try:
                     end_index = verse_content.find('\\zaln-e', start_match.end())
@@ -29,6 +32,9 @@ def parse_aligned_usfm(file_path):
                     
                     zaln_block = verse_content[start_match.start():end_index + 8]
                     
+                    # if current_chapter == 4 and current_verse == 22:
+                    #     print("Zaln block: " + zaln_block)                        
+
                     hebrew_attrs = start_match.group(1)
                     x_content = re.search(r'x-content="([^"]*)"', hebrew_attrs)
                     x_content = x_content.group(1) if x_content else ""
@@ -43,7 +49,21 @@ def parse_aligned_usfm(file_path):
                     
                     for gl_word_match in gl_words:
                         gl_word = gl_word_match.group(1).strip()
-                        aligned_words.append((book, current_chapter, current_verse, gl_word, x_content, h_occurrence, h_occurrences))
+                        # if current_chapter == 4 and current_verse == 22: print (f"GL WORD MATCH: {gl_word_match}")
+
+                        # gl_occurrence = 1
+                        # gl_occurrences = 1
+
+                        gl_occurrence = re.search(r'x-occurrence="(\d+)"', gl_word_match.group(0))
+                        gl_occurrence = int(gl_occurrence.group(1)) if gl_occurrence else 1
+                        
+                        gl_occurrences = re.search(r'x-occurrences="(\d+)"', gl_word_match.group(0))
+                        gl_occurrences = int(gl_occurrences.group(1)) if gl_occurrences else 1
+
+                        aligned_words.append((book, current_chapter, current_verse, gl_word, gl_occurrence, gl_occurrences, x_content, h_occurrence, h_occurrences))
+                        # if current_chapter == 4 and current_verse == 22:
+                            # print(book, current_chapter, current_verse, gl_word, gl_occurrence, gl_occurrences, x_content, h_occurrence, h_occurrences)
+                            # print()
                 
                 except Exception as e:
                     print(f"Error processing zaln block in {book} {current_chapter}:{current_verse}")
@@ -57,7 +77,9 @@ def parse_aligned_usfm(file_path):
         if not aligned_words:
             print(f"No aligned words found in file: {file_path}")
         else:
-            print(f"Found {len(aligned_words)} aligned words in file: {file_path}")
+            print(f"Found {len(aligned_words)} aligned words in file: {file_path}.")
+            for i, word in enumerate(aligned_words[2770:], 1):
+                print(f"{i}. {word}")
 
         return aligned_words
 

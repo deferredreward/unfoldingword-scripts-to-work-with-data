@@ -21,7 +21,9 @@ def create_tables(cursor):
         Book TEXT,
         Chapter INTEGER,
         Verse INTEGER,
-        Word TEXT
+        Word TEXT,
+        Occurrence INTEGER,
+        Occurrences INTEGER
     )
     ''')
 
