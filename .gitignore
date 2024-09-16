@@ -5,3 +5,5 @@ data/
 *.pyc
 *.db
 *.sqlite
+*.txt
+*.log

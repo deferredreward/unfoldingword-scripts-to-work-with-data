@@ -6,7 +6,7 @@ def parse_aligned_usfm(file_path):
         with open(file_path, 'r', encoding='utf-8') as file:
             content = file.read()
 
-        book = re.search(r'\\id\s+([A-Z]{3})', content)
+        book = re.search(r'\\id\s+([1-3]?[A-Z]{2,3})', content)
         book = book.group(1) if book else "Unknown"
         aligned_words = []
         current_chapter = 1

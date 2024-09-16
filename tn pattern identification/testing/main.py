@@ -2,6 +2,7 @@ import config, os, traceback
 from parsers.usfm_parser import parse_usfm_file
 from parsers.aligned_usfm_parser import parse_aligned_usfm
 from parsers.twl_operations import process_twl_files
+from parsers.tn_operations import process_tn_files
 from db_operations.bible_verse_operations import insert_bible_verses, insert_word_alignments
 from db_operations.aligned_verse_operations import insert_aligned_data
 from utils.file_utils import get_usfm_files, count_usfm_files
@@ -27,7 +28,7 @@ def process_origL_usfm_files(directory, db_path):
 
 def process_aligned_usfm_files(directory, db_path, clear_tables=False):
     all_aligned_words = []
-    all_alignment_data = []
+    # all_alignment_data = []
     for filename in os.listdir(directory):
         if filename.endswith('.usfm'):
             file_path = os.path.join(directory, filename)
@@ -55,13 +56,13 @@ def main(create_new_database=True, clear_tables=False):
     else:
         db_path = prepare_db(config.DB_PATH)
 
-
-    # bible_verse_ids = process_origL_usfm_files(config.ORIGL_USFM_DIRECTORY, db_path)
-    # process_aligned_usfm_files(config.ALIGNED_USFM_DIRECTORY, db_path, clear_tables)
+    process_origL_usfm_files(config.ORIGL_USFM_DIRECTORY, db_path)
+    process_aligned_usfm_files(config.ALIGNED_USFM_DIRECTORY, db_path, clear_tables)
 
     process_twl_files(config.TWL_DIRECTORY, db_path)
-
+    process_tn_files(config.TN_DIRECTORY, db_path, clear_tables)  
     print("Script execution completed.")
 
 if __name__ == "__main__":
-    main(create_new_database=False, clear_tables=False)  # Set clear_tables to False if you don't want to clear tables
+    # main(create_new_database=False, clear_tables=True)  # Update my big db
+    main(create_new_database=True, clear_tables=False)  # New db, don't need to clear tables

@@ -63,6 +63,32 @@ def create_tables(cursor):
         FOREIGN KEY (bible_verse_id) REFERENCES Bible_Verse(id)
     )
     ''')
+    cursor.execute('''
+    CREATE TABLE IF NOT EXISTS translation_notes (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        book TEXT,
+        chapter INTEGER,
+        verse INTEGER,
+        tn_id TEXT,
+        support_reference TEXT,
+        quote TEXT,
+        occurrence INTEGER,
+        note TEXT
+    )
+    ''')
+
+    cursor.execute('''
+    CREATE TABLE IF NOT EXISTS translation_note_links (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        book TEXT,
+        chapter INTEGER,
+        verse INTEGER,
+        translation_note_id INTEGER,
+        bible_verse_id INTEGER,
+        FOREIGN KEY (translation_note_id) REFERENCES translation_notes(id),
+        FOREIGN KEY (bible_verse_id) REFERENCES Bible_Verse(id)
+    )
+    ''')
 
 def get_next_db_name(base_name="BookPackage"):
     i = 1

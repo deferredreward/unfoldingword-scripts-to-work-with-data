@@ -22,7 +22,7 @@ def parse_twl_file(file_path):
                 'tags': row[2],
                 'OrigWords': row[3],
                 'Occurrence': int(row[4]),
-                'TWLink': row[5]
+                'TWLink': '/'.join(row[5].split('/')[-2:])
             })
 
     return twl_data
@@ -59,21 +59,24 @@ def insert_twl_data(db_path, twl_data):
             
             if len(matching_verses) >= len(orig_words):
                 # Check if the sequence matches
+                occurrences = 0
                 for i in range(len(matching_verses) - len(orig_words) + 1):
                     if [verse[1] for verse in matching_verses[i:i+len(orig_words)]] == orig_words:
-                        # Found matching sequence, create links
-                        for j, verse in enumerate(matching_verses[i:i+len(orig_words)]):
-                            cursor.execute('''
-                                INSERT INTO translation_word_links (translation_word_id, bible_verse_id, book, chapter, verse)
-                                VALUES (?, ?, ?, ?, ?)
-                            ''', (translation_word_id, verse[0], entry['book'], entry['chapter'], entry['verse']))
-                        break
+                        occurrences += 1
+                        if occurrences == entry['Occurrence']:
+                            # Found matching sequence for the correct occurrence, create links
+                            for j, verse in enumerate(matching_verses[i:i+len(orig_words)]):
+                                cursor.execute('''
+                                    INSERT INTO translation_word_links (translation_word_id, bible_verse_id, book, chapter, verse)
+                                    VALUES (?, ?, ?, ?, ?)
+                                ''', (translation_word_id, verse[0], entry['book'], entry['chapter'], entry['verse']))
+                            break
                 else:
                     with open('error_log-b.txt', 'a', encoding='utf-8') as error_log:
-                        error_log.write(f"No matching sequence found for {entry['book']} {entry['chapter']}:{entry['verse']}  {entry['twl_id']} - {entry['OrigWords']}\n")
+                        error_log.write(f"No matching sequence found for occurrence {entry['Occurrence']} of {entry['book']} {entry['chapter']}:{entry['verse']} {entry['twl_id']} - {entry['OrigWords']}\n")
             else:
                 with open('error_log-b.txt', 'a', encoding='utf-8') as error_log:
-                    error_log.write(f"Not enough matching words found for {entry['book']} {entry['chapter']}:{entry['verse']}  {entry['twl_id']} - {entry['OrigWords']}\n")
+                    error_log.write(f"Not enough matching words found for {entry['book']} {entry['chapter']}:{entry['verse']} {entry['twl_id']} - {entry['OrigWords']}\n")
 
         conn.commit()
         print(f"Successfully inserted {len(twl_data)} TWL entries.")
