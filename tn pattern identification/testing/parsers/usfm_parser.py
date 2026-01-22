@@ -16,7 +16,7 @@ def parse_usfm_file(file_path):
             current_chapter = int(line.split()[1])
         elif line.startswith('\\v '):
             current_verse = int(line.split()[1])
-        words = re.findall(r'\\w (.*?)\|lemma="(.*?)" strong="(.*?)" x-morph="[HGer]{2},(.*?)"\\w\*', line)
+        words = re.findall(r'\\w (.*?)\|lemma="(.*?)" strong="(.*?)" x-morph="[AHGer]{2},(.*?)" ?\\w\*', line)
         for word, lemma, strong, morph in words:
             verses.append((book, current_chapter, current_verse, word, lemma, strong, morph))
     return verses

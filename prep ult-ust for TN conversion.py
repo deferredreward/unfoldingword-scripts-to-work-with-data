@@ -1,8 +1,8 @@
 
 from glob import glob
 
-ULTfilesLocation = "C:/Users/benja/Downloads/ult/*.usfm"
-USTfilesLocation = "C:/Users/benja/Downloads/ust/*.usfm"
+ULTfilesLocation = "./spanish/*.usfm"
+USTfilesLocation = "./spanish/*.usfm"
 
 def changebracketsToAdd(filesLocation):
     for usfmFile in glob(filesLocation):

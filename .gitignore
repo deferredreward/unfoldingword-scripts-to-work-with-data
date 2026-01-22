@@ -7,3 +7,6 @@ data/
 *.sqlite
 *.txt
 *.log
+*.tsv
+*.csv
+*.usfm
